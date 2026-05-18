@@ -10,11 +10,11 @@ const Footer = () => {
                     {/* Column 1: Brand & About */}
                     <div className="lg:col-span-2 space-y-4">
                         <Link href={'/'} className="flex items-center gap-2 text-xl font-bold tracking-tight text-[#082a5e]">
-                            <span className="p-2 bg-[#082a5e] text-white rounded-xl shadow-sm text-sm font-black select-none">MV</span>
-                            <span className="bg-gradient-to-r from-[#082a5e] to-[#1e4ebd] bg-clip-text text-transparent">MediaVault</span>
+                            <span className="p-2 bg-[#082a5e] text-white rounded-xl shadow-sm text-sm font-black select-none">IV</span>
+                            <span className="bg-gradient-to-r from-[#082a5e] to-[#1e4ebd] bg-clip-text text-transparent">IdeaVault</span>
                         </Link>
                         <p className="text-sm text-base-content/70 max-w-sm leading-relaxed">
-                            MediaVault is a next-generation hub for entrepreneurs, creators, and innovators to share, collaborate, and bring groundbreaking startup ideas to life.
+                            IdeaVault is a next-generation hub for entrepreneurs, creators, and innovators to share, collaborate, and bring groundbreaking startup ideas to life.
                         </p>
                         {/* Social Links */}
                         <div className="flex items-center gap-4 pt-2">
@@ -59,7 +59,7 @@ const Footer = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#082a5e] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
-                                <a href="mailto:support@mediavault.com" className="hover:text-[#082a5e] transition-colors">support@mediavault.com</a>
+                                <a href="mailto:support@ideavault.com" className="hover:text-[#082a5e] transition-colors">support@ideavault.com</a>
                             </li>
                             <li className="flex items-start gap-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#082a5e] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,7 +77,7 @@ const Footer = () => {
             {/* Bottom Bar: Copyright & Legal */}
             <div className="border-t border-base-200 bg-base-200/30">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-base-content/60">
-                    <p>© {new Date().getFullYear()} MediaVault. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} IdeaVault. All rights reserved.</p>
                     <div className="flex items-center gap-6">
                         <Link href="/privacy" className="hover:text-[#082a5e] transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="hover:text-[#082a5e] transition-colors">Terms of Service</Link>

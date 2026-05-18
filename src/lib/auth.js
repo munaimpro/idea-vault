@@ -7,7 +7,7 @@ const client = new MongoClient(process.env.MONGO_URI);
 
 await client.connect();
 
-const db = client.db("wanderlust");
+const db = client.db("ideavault");
 
 export const auth = betterAuth({
     database: mongodbAdapter(db, {
