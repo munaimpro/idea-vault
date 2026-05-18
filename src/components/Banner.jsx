@@ -59,9 +59,9 @@ const Banner = () => {
                                 backgroundSize: "cover",
                             }}
                         >
-                            <div className="hero-overlay bg-gradient-to-r from-slate-950/90 via-blue-950/80 to-slate-900/30"></div>
+                            <div className="hero-overlay bg-linear-to-r from-slate-950/90 via-blue-950/80 to-slate-900/30"></div>
 
-                            {/* Aligned Left Content for Elite Look */}
+                            {/* Content */}
                             <div className="hero-content justify-start text-left text-white w-full px-6 sm:px-12 lg:px-20 z-10 py-20">
                                 <div className="max-w-2xl space-y-6">
                                     <div className="badge badge-outline border-white/20 text-white px-4 py-4 bg-white/10 backdrop-blur-md">
@@ -75,6 +75,24 @@ const Banner = () => {
                                     <p className="text-sm sm:text-lg text-white/85 font-medium max-w-xl leading-relaxed">
                                         {slide.description}
                                     </p>
+
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="badge badge-outline text-white">
+                                            AI
+                                        </span>
+
+                                        <span className="badge badge-outline text-white">
+                                            FinTech
+                                        </span>
+
+                                        <span className="badge badge-outline text-white">
+                                            EdTech
+                                        </span>
+
+                                        <span className="badge badge-outline text-white">
+                                            SaaS
+                                        </span>
+                                    </div>
 
                                     <div className="pt-2">
                                         <Link  href="/ideas" className="btn bg-white hover:bg-base-200 text-[#082a5e] border-none font-bold rounded-xl px-8 shadow-lg shadow-[#082a5e]/20 transition-all duration-300 hover:scale-[1.02] btn-sm sm:btn-md">
