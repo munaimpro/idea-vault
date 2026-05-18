@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link"; // Next.js-এর স্ট্যান্ডার্ড Link ব্যবহার করবেন
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";

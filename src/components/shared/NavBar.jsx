@@ -2,37 +2,61 @@
 import Image from "next/image";
 import Link from "next/link";
 import NavLink from "./NavLink";
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 
 const NavBar = () => {
+
+    const {
+        data: session,
+    } = authClient.useSession()
+
+    const user = session?.user
+    console.log(user);
+
+    const handleLogout = () => {
+        authClient.signOut();
+    }
+
     const links = (
-        <>
+        user ? <>
             <li><NavLink href={'/'}>Home</NavLink></li>
             <li><NavLink href={'/ideas'}>Ideas</NavLink></li>
             <li><NavLink href={'/add-idea'}>Add Idea</NavLink></li>
             <li><NavLink href={'/my-ideas'}>My Ideas</NavLink></li>
             <li><NavLink href={'/interactions'}>My Interactions</NavLink></li>
+            <li>
+                <details>
+                    <summary className="text-[#082a5e] font-medium">
+                        Profile
+                    </summary>
 
-            {/* Dropdown Link */}
-            <li className="dropdown dropdown-end lg:dropdown-hover">
-                <div tabIndex={0} role="button" className="flex items-center gap-1 text-[#082a5e] text-[15px] font-medium px-4 py-2 hover:bg-base-200/60 rounded-lg transition-colors cursor-pointer">
-                    Profile
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </div>
-                <ul tabIndex={0} className="dropdown-content menu p-2 shadow-xl bg-base-100 rounded-xl w-52 z-50 border border-base-200 mt-1">
-                    <li>
-                        <NavLink href={'/profile'} className="hover:bg-base-200">
-                            Profile Management
-                        </NavLink>
-                    </li>
-                </ul>
+                    <ul className="p-2 bg-base-100 rounded-xl shadow-xl w-52 z-[9999]">
+                        <li>
+                            <NavLink href="/profile">
+                                Profile Management
+                            </NavLink>
+                        </li>
+                    </ul>
+                </details>
             </li>
+            <li>
+                <details>
+                    <summary>Parent</summary>
+                    <ul className="p-2 bg-base-100 w-40 z-1">
+                        <li><a>Submenu 1</a></li>
+                        <li><a>Submenu 2</a></li>
+                    </ul>
+                </details>
+            </li>
+        </> : <>
+                <li><NavLink href={'/'}>Home</NavLink></li>
+                <li><NavLink href={'/ideas'}>Ideas</NavLink></li>
         </>
     );
 
     return (
-        <div className="navbar bg-base-100/90 backdrop-blur-md border-b border-base-200/80 fixed top-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8">
+        <div className="navbar bg-base-100/90 backdrop-blur-md border-b border-base-200/80 fixed top-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 overflow-visible">
             <div className="container mx-auto flex items-center justify-between">
 
                 {/* Navbar Start: Logo & Mobile Menu */}
@@ -57,39 +81,31 @@ const NavBar = () => {
 
                 {/* Navbar Center: Desktop Menu */}
                 <div className="hidden lg:flex items-center">
-                    <ul className="menu menu-horizontal p-0 gap-1.5 items-center">
+                    <ul className="menu menu-horizontal p-0 gap-1.5 items-center overflow-visible">
                         {links}
                     </ul>
                 </div>
 
                 {/* Navbar End: User Actions */}
                 <div className="flex items-center gap-3">
-                    {/* User Profile Avatar (Optional View) */}
-                    <div className="dropdown dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ring-2 ring-offset-2 ring-base-200 hover:ring-[#082a5e]/30 transition-all">
-                            <div className="w-9 rounded-full">
-                                <Image
-                                    alt="User Profile"
-                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                                    width={36}
-                                    height={36}
-                                />
-                            </div>
-                        </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow-xl bg-base-100 rounded-xl w-52 border border-base-200">
-                            <li><Link href="/dashboard">Dashboard</Link></li>
-                            <li><Link href="/settings">Settings</Link></li>
-                            <hr className="my-1 border-base-200" />
-                            <li><span className="text-error font-medium">Logout</span></li>
-                        </ul>
-                    </div>
-
-                    {/* Login Button */}
-                    <Link className="btn bg-[#082a5e] hover:bg-[#061e45] text-white border-none rounded-xl px-5 shadow-sm shadow-[#082a5e]/20 transition-all font-medium text-sm btn-sm md:btn-md" href={'/login'}>
-                        Login
-                    </Link>
+                    {
+                        user ? (
+                            <>
+                                <Avatar>
+                                    <Avatar.Image alt={user?.name || "User"} src={user?.image || ""} />
+                                    <Avatar.Fallback>{user?.name?.[0] || "U"}</Avatar.Fallback>
+                                </Avatar>
+                                <Button onClick={handleLogout} className="btn bg-[#082a5e] hover:bg-[#061e45] text-white border-none rounded-xl px-5 shadow-sm shadow-[#082a5e]/20 transition-all font-medium text-sm btn-sm md:btn-md" href={'/login'}>
+                                    Logout
+                                </Button>
+                            </>
+                        ) : (
+                            <Link className="btn bg-[#082a5e] hover:bg-[#061e45] text-white border-none rounded-xl px-5 shadow-sm shadow-[#082a5e]/20 transition-all font-medium text-sm btn-sm md:btn-md" href={'/login'}>
+                                Login
+                            </Link>
+                        )
+                    }
                 </div>
-
             </div>
         </div>
     );
