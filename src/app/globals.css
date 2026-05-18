@@ -4,3 +4,13 @@
 button, .btn {
     box-shadow:none !important
 }
+
+.swiper-pagination-bullet-active {
+    background: #fff !important;
+    width: 24px !important;
+    border-radius: 4px !important;
+}
+
+.swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+}
