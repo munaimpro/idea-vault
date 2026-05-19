@@ -7,6 +7,8 @@ import toast from 'react-hot-toast';
 
 const onSubmit = async (event) => {
     event.preventDefault();
+    const form = event.currentTarget;
+
     const formData = new FormData(event.currentTarget);
     const user = Object.fromEntries(formData.entries());
 
@@ -21,6 +23,8 @@ const onSubmit = async (event) => {
     console.log(data, error);
 
     if (data) {
+        // Reset form
+        form.reset();
         redirect('/');
     }
 

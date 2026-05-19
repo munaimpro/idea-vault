@@ -1,27 +1,16 @@
 import IdeaList from '@/components/IdeaList';
-import { auth } from '@/lib/auth';
-import { headers } from 'next/headers';
 
 const IdeasPage = async () => {
-
-    // Get Token
-    const { token } = await auth.api.getToken({
-        headers: await headers()
-    });
     
     // Find all ideas
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea`, {
-        headers: {
-            authorization: `Bearer ${token}`
-        }
-    })
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea`)
     const ideas = await response.json();
     console.log(ideas);
 
     return (
         <div className="min-h-screen bg-base-100 pb-20 pt-24 relative overflow-hidden">
 
-            {/* BACKGROUND AESTHETICS */}
+            {/* Background overlay */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-100 bg-[radial-gradient(ellipse_at_top,rgba(8,42,94,0.04),transparent_50%)] pointer-events-none" />
 
             {/* 1. Page Title */}

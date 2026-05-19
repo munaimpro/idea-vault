@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import IdeaComment from '@/components/IdeaComment';
 import { auth } from '@/lib/auth';
