@@ -15,16 +15,25 @@ const IdeaDetailsPage = async ({ params }) => {
     });
 
     // Find idea details
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea/${ideaId}`, {
+    const ideaResponse = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea/${ideaId}`, {
         headers: {
             authorization: `Bearer ${token}`
         }
     });
-    const idea = await response.json();
-    const { userName, title, shortDescription, detailedDescription, createdAt, category, imageURL, estimatedBudget, tags, targetAudience } = idea;
+    const idea = await ideaResponse.json();
+    const {_id, userName, title, shortDescription, detailedDescription, createdAt, category, imageURL, estimatedBudget, tags, targetAudience } = idea;
     console.log("Idea details", idea);
 
     // Find all comment for this idea
+    const commentResponse = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/comment/${ideaId}`, {
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    });
+    const comments = await commentResponse.json();
+    console.log("Comment for this idea: ", comments);
+
+
     const staticComments = [
         {
             _id: "c1",
@@ -48,7 +57,9 @@ const IdeaDetailsPage = async ({ params }) => {
     })
     const user = session?.user;
     const currentUserId = user?.id;
+    const currentUserName = user?.name;
     console.log('Current User id: ', currentUserId);
+    console.log('Current User name: ', currentUserName);
 
     return (
         <div className="min-h-screen bg-base-100 pb-24 pt-24 relative overflow-hidden">
@@ -135,8 +146,11 @@ const IdeaDetailsPage = async ({ params }) => {
                     <div className="space-y-2">
                         <h4 className="text-xs font-bold text-base-content/40 uppercase tracking-widest">Discovery Tags</h4>
                         <div className="flex flex-wrap gap-2">
-                            {tags.map((tag, idx) => (
-                                <span key={idx} className="text-xs font-semibold text-[#082a5e] bg-[#082a5e]/5 px-3 py-1 rounded-xl hover:bg-[#082a5e]/10 transition-colors cursor-pointer">
+                        {Array.isArray(idea.tags) &&
+                            idea.tags.map((tag, tag_id) => (
+                                <span
+                                    key={tag_id} className="text-xs font-semibold text-[#082a5e] bg-[#082a5e]/5 px-3 py-1 rounded-xl hover:bg-[#082a5e]/10 transition-colors cursor-pointer"
+                                >
                                     #{tag}
                                 </span>
                             ))}
@@ -144,7 +158,7 @@ const IdeaDetailsPage = async ({ params }) => {
                     </div>
 
                     {/* Comment Box */}
-                    {/* <IdeaComment staticComments={staticComments}></IdeaComment> */}
+                    <IdeaComment comments={comments} currentUserId={currentUserId} currentUserName={currentUserName} ideaId={_id}></IdeaComment>
                 </div>
 
                 {/* Right Side: Metadata */}
