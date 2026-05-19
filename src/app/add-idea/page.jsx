@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 import { Button, Card, Input, Label, TextField, Form } from '@heroui/react';
 import toast from 'react-hot-toast';
 import Image from 'next/image';
+import { authClient } from '@/lib/auth-client';
 
 const AddIdeaPage = () => {
     // Live Preview Tracker State
     const [previewData, setPreviewData] = useState({
         title: '',
-        shortDesc: '',
+        shortDescription: '',
         category: 'Tech',
         image: ''
     });
@@ -19,14 +20,57 @@ const AddIdeaPage = () => {
         setPreviewData(prev => ({ ...prev, [name]: value }));
     };
 
+    const { data: session } = authClient.useSession()
+    const user = session?.user
+
     const onSubmit = async (event) => {
         event.preventDefault();
+
+        const form = event.currentTarget;
+
         const formData = new FormData(event.currentTarget);
         const ideaData = Object.fromEntries(formData.entries());
 
-        console.log(ideaData);
-        // এখানে আপনার ডেটাবেজ বা API সাবমিশন লজিক বসবে
-        toast.success("Your startup idea has been cataloged safely!");
+        const { data: tokenData } = await authClient.token();
+        console.log(tokenData);
+
+        const finalIdeaData = {
+            ...ideaData,
+            userId: user?.id,
+            createdAt: new Date().toISOString(),
+            likes: 0,
+            estimatedBudget: Number(ideaData.estimatedBudget || 0),
+            tags: ideaData.tags
+                ? ideaData.tags.split(',').map(tag => tag.trim()) : []
+        }
+        console.log(finalIdeaData);
+
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
+            },
+            body: JSON.stringify(finalIdeaData)
+        });
+
+        const data = await response.json();
+        console.log(data);
+
+        if (data?.insertedId) {
+            toast.success("Your startup idea has been cataloged successfully!");
+
+            // Reset form
+            form.reset();
+
+            // Reset preview state
+            setPreviewData({
+                title: '',
+                shortDescription: '',
+                category: 'Tech',
+                imageURL: ''
+            });
+        }
     };
 
     return (
@@ -55,8 +99,8 @@ const AddIdeaPage = () => {
                     {/* Interactive Showcase Card */}
                     <div className="bg-base-100 border border-base-200 shadow-xl shadow-base-200/50 rounded-3xl overflow-hidden group transition-all duration-300 hover:shadow-2xl">
                         <div className="h-44 bg-gradient-to-br from-[#082a5e]/10 to-[#1e4ebd]/10 relative flex items-center justify-center overflow-hidden">
-                            {previewData.image ? (
-                                <Image src={previewData.image} alt="Preview Cover" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e) => e.target.style.display = 'none'} width={100} height={100} />
+                            {previewData.imageURL ? (
+                                <Image src={previewData.imageURL} alt="Preview Cover" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e) => e.target.style.display = 'none'} width={100} height={100} />
                             ) : (
                                 <span className="text-4xl">Image Preview</span>
                             )}
@@ -69,7 +113,7 @@ const AddIdeaPage = () => {
                                 {previewData.title || "Untitled Disruptive Idea"}
                             </h3>
                             <p className="text-xs text-base-content/60 line-clamp-2 min-h-8">
-                                {previewData.shortDesc || "A brilliant placeholder description detailing the core premise of your next big breakthrough ecosystem."}
+                                {previewData.shortDescription || "A brilliant placeholder description detailing the core premise of your next big breakthrough ecosystem."}
                             </p>
                             <div className="pt-2 border-t border-base-100 flex items-center justify-between text-[11px] font-semibold text-base-content/40">
                                 <span>Status: Pitch Draft</span>
@@ -110,9 +154,9 @@ const AddIdeaPage = () => {
                             </div>
                         </div>
 
-                        <TextField isRequired name="shortDesc">
+                        <TextField isRequired name="shortDescription">
                             <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Short Description</Label>
-                            <Input placeholder="Sum up your startup in one punchy sentence" onChange={handleInputChange} name="shortDesc" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
+                            <Input placeholder="Sum up your startup in one punchy sentence" onChange={handleInputChange} name="shortDescription" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
                         </TextField>
 
                         <div className="flex flex-col">
@@ -173,9 +217,9 @@ const AddIdeaPage = () => {
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <TextField isRequired name="image">
+                            <TextField isRequired name="imageURL">
                                 <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Image URL</Label>
-                                <Input placeholder="Unsplash or vector art image link" onChange={handleInputChange} name="image" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
+                                <Input placeholder="Unsplash or vector art image link" onChange={handleInputChange} name="imageURL" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
                             </TextField>
 
                             <TextField name="tags">
