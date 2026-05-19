@@ -11,7 +11,7 @@ const AddIdeaPage = () => {
         title: '',
         shortDescription: '',
         category: 'Tech',
-        image: ''
+        imageUrl: ''
     });
 
     const handleInputChange = (e) => {
@@ -37,6 +37,7 @@ const AddIdeaPage = () => {
         const finalIdeaData = {
             ...ideaData,
             userId: user?.id,
+            userName: user?.name,
             createdAt: new Date().toISOString(),
             likes: 0,
             estimatedBudget: Number(ideaData.estimatedBudget || 0),
@@ -98,9 +99,9 @@ const AddIdeaPage = () => {
 
                     {/* Interactive Showcase Card */}
                     <div className="bg-base-100 border border-base-200 shadow-xl shadow-base-200/50 rounded-3xl overflow-hidden group transition-all duration-300 hover:shadow-2xl">
-                        <div className="h-44 bg-gradient-to-br from-[#082a5e]/10 to-[#1e4ebd]/10 relative flex items-center justify-center overflow-hidden">
-                            {previewData.imageURL ? (
-                                <Image src={previewData.imageURL} alt="Preview Cover" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e) => e.target.style.display = 'none'} width={100} height={100} />
+                        <div className="h-44 bg-linear-to-br from-[#082a5e]/10 to-[#1e4ebd]/10 relative flex items-center justify-center overflow-hidden">
+                            {previewData.image ? (
+                                <Image src={previewData.image} alt="Preview Cover" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e) => e.target.style.display = 'none'} width={100} height={100} />
                             ) : (
                                 <span className="text-4xl">Image Preview</span>
                             )}
