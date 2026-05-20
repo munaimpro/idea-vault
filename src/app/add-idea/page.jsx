@@ -5,6 +5,10 @@ import toast from 'react-hot-toast';
 import Image from 'next/image';
 import { authClient } from '@/lib/auth-client';
 
+export const metadata = {
+ title: "Add Idea | IdeaVault"
+}
+
 const AddIdeaPage = () => {
     // Live Preview Tracker State
     const [previewData, setPreviewData] = useState({

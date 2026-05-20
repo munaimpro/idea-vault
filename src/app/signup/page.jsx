@@ -6,6 +6,10 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 
+export const metadata = {
+    title: "Sign Up | IdeaVault"
+}
+
 const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);

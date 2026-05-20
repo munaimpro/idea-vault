@@ -3,6 +3,10 @@ import { auth } from '@/lib/auth';
 import { authClient } from '@/lib/auth-client';
 import { headers } from 'next/headers';
 
+export const metadata = {
+ title: "Interations | IdeaVault"
+}
+
 const InteractionsPage = async () => {
 
     // Getting user id from the session

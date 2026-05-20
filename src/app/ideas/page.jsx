@@ -1,5 +1,9 @@
 import IdeaList from '@/components/IdeaList';
 
+export const metadata = {
+    title: "Ideas | IdeaVault"
+}
+
 const IdeasPage = async () => {
     
     // Find all ideas

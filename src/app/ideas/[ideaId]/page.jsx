@@ -4,6 +4,10 @@ import IdeaComment from '@/components/IdeaComment';
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 
+export const metadata = {
+    title: "Idea Details | IdeaVault"
+}
+
 const IdeaDetailsPage = async ({ params }) => {
     const { ideaId } = await params;
     console.log("Idea id: ", ideaId);

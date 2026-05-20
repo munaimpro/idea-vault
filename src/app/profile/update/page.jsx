@@ -5,6 +5,10 @@ import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 
+export const metadata = {
+    title: "Update Profile | IdeaVault"
+}
+
 const ProfileUpdatePage = () => {
     const router = useRouter();
     const [isSubmitting, setIsSubmitting] = useState(false);

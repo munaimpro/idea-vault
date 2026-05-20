@@ -5,6 +5,10 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import toast from 'react-hot-toast';
 
+export const metadata = {
+    title: "Login | IdeaVault"
+}
+
 const onSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;

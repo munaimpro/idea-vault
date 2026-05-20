@@ -4,6 +4,10 @@ import Image from 'next/image';
 import userAvater from '@/assets/avater.webp';
 import Link from 'next/link';
 
+export const metadata = {
+ title: "Profile | IdeaVault"
+}
+
 const ProfilePage = () => {
     const { data: session } = authClient.useSession();
     const user = session?.user;
