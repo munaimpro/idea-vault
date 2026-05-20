@@ -1,7 +1,28 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { AlertDialog, Button } from "@heroui/react";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export function DeleteConfirmModal({ idea }) {
+
+    const { _id, title } = idea;
+    const router = useRouter();
+
+    // Delete Idea
+    const handleDeleteIdea = async () => {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea/${_id}`, {
+            method: 'DELETE',
+        })
+        const data = await response.json();
+        console.log(data);
+
+        if (data.deletedCount > 0) {
+            router.refresh();
+            toast.success("Idea deleted successfully");
+        }
+    }
+
     return (
         <AlertDialog>
             {/* Floating Glassmorphic Delete Action Button */}
@@ -22,7 +43,7 @@ export function DeleteConfirmModal({ idea }) {
                         <AlertDialog.Header className="pt-6 px-6">
                             <AlertDialog.Icon status="danger" className="bg-red-50 text-red-600" />
                             <AlertDialog.Heading className="text-lg font-bold text-base-content mt-3">
-                                Delete Idea Permanently?
+                                Delete Idea - {title} Permanently?
                             </AlertDialog.Heading>
                         </AlertDialog.Header>
                         <AlertDialog.Body className="px-6 py-2">
@@ -34,7 +55,7 @@ export function DeleteConfirmModal({ idea }) {
                             <Button slot="close" variant="tertiary" className="flex-1 rounded-xl h-11 text-xs font-bold border border-base-200">
                                 Cancel
                             </Button>
-                            <Button slot="close" variant="danger" className="flex-1 rounded-xl h-11 text-xs font-bold bg-red-600 hover:bg-red-700 text-white">
+                            <Button onClick={handleDeleteIdea} slot="close" variant="danger" className="flex-1 rounded-xl h-11 text-xs font-bold bg-red-600 hover:bg-red-700 text-white">
                                 Delete Permanently
                             </Button>
                         </AlertDialog.Footer>

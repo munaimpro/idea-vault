@@ -10,18 +10,16 @@ const MyIdeasPage = async () => {
         headers: await headers()
     });
     const user = session?.user
-    const userId = user?._id;
+    console.log(user);
+    const userId = user?.id;
+    console.log(userId);
     
     // Getting Token
     const { data: tokenData } = await authClient.token();
     console.log(tokenData);
 
     // Find ideas posted by the session user
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea/${userId}`, {
-        headers: {
-            authorization: `Bearer ${tokenData?.token}`
-        }
-    })
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea-by-user/${userId}`)
     const ideas = await response.json();
     console.log(ideas);
 
@@ -57,7 +55,7 @@ const MyIdeasPage = async () => {
                         <div className="w-px h-10 bg-base-200" />
                         <div className="px-2">
                             <p className="text-[10px] uppercase font-bold text-base-content/30 tracking-widest mb-0.5">Total Budget</p>
-                            <p className="text-2xl font-black text-[#082a5e]">${totalValuation.toLocaleString()}</p>
+                            <p className="text-2xl font-black text-[#082a5e]">0</p>
                         </div>
                     </div>
 
@@ -71,7 +69,8 @@ const MyIdeasPage = async () => {
                         <p className="text-sm font-medium text-base-content/40">No architectures compiled yet. Begin by broadcasting your first concept.</p>
                     </div>
                 ) : (
-                    <MyIdeaList ideas={ideas} />
+                        <MyIdeaList ideas={ideas} />
+                        // <p>test</p>
                 )}
             </div>
 

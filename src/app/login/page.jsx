@@ -138,9 +138,9 @@ const SigninPage = () => {
                     {/* Brand Identity */}
                     <div className="flex items-center gap-2.5">
                         <div className="w-8 h-8 bg-white text-[#082a5e] font-black flex items-center justify-center rounded-xl text-xs">
-                            MV
+                            IV
                         </div>
-                        <span className="font-bold tracking-tight text-lg">MediaVault Hub</span>
+                        <span className="font-bold tracking-tight text-lg">IdeaVault</span>
                     </div>
 
                     {/* Pitching Content Optimized for Returning Founders */}
