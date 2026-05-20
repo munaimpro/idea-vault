@@ -55,7 +55,7 @@ const SigninPage = () => {
                     <Card className="bg-transparent shadow-none border-none p-0">
 
                         {/* Header Text */}
-                        <div className="mb-6 space-y-1">
+                        <div className="mb-6 space-y-1 mx-1">
                             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a5e] tracking-tight">
                                 Welcome Back
                             </h2>
@@ -65,7 +65,7 @@ const SigninPage = () => {
                         </div>
 
                         {/* Signin Form */}
-                        <Form onSubmit={onSubmit} className="flex flex-col gap-4.5">
+                        <Form onSubmit={onSubmit} className="mx-1 flex flex-col gap-4.5">
 
                             <TextField
                                 isRequired
@@ -106,9 +106,9 @@ const SigninPage = () => {
                                 </Button>
 
                                 <div className="relative flex py-2 items-center">
-                                    <div className="flex-grow border-t border-base-200"></div>
-                                    <span className="flex-shrink mx-4 text-xs text-base-content/40 font-medium bg-transparent">Or sign in with</span>
-                                    <div className="flex-grow border-t border-base-200"></div>
+                                    <div className="grow border-t border-base-300"></div>
+                                    <span className="shrink mx-4 text-xs text-base-content/40 font-medium bg-transparent">Or</span>
+                                    <div className="grow border-t border-base-300"></div>
                                 </div>
 
                                 <Button
