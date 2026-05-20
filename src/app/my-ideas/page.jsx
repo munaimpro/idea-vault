@@ -70,7 +70,6 @@ const MyIdeasPage = async () => {
                     </div>
                 ) : (
                         <MyIdeaList ideas={ideas} />
-                        // <p>test</p>
                 )}
             </div>
 
