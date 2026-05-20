@@ -5,7 +5,7 @@ import Link from "next/link";
 import { DeleteConfirmModal } from "./DeleteIdeaConfirmModal";
 import UpdateIdeaModal from "./UpdateIdeaModal";
 
-const MyIdeaList = ({ ideas }) => {
+const InteractedIdeaList = ({ ideas }) => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {ideas.map((idea) => (
@@ -33,12 +33,6 @@ const MyIdeaList = ({ ideas }) => {
                             <span className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-wider text-white bg-[#082a5e]/90 backdrop-blur-md px-3 py-1 rounded-full">
                                 {idea.category}
                             </span>
-
-                            {/* Action Buttons */}
-                            <div className="absolute top-4 right-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                                <UpdateIdeaModal idea={idea} />
-                                <DeleteConfirmModal idea={idea} />
-                            </div>
 
                             {/* Idea Likes */}
                             <div className="absolute bottom-4 right-4 flex items-center gap-1.5 text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-semibold border border-white/10 group-hover:bg-amber-500 group-hover:border-transparent transition-colors">
@@ -104,4 +98,4 @@ const MyIdeaList = ({ ideas }) => {
     );
 };
 
-export default MyIdeaList;
+export default InteractedIdeaList;
