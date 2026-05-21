@@ -51,7 +51,7 @@ const MyIdeaList = ({ ideas }) => {
 
                         {/* 2. Card Content*/}
                         <div className="p-6 pb-2 space-y-2">
-                            <h3 className="text-lg font-bold text-base-content group-hover:text-[#082a5e] transition-colors tracking-tight line-clamp-1 text-start">
+                            <h3 className="text-lg font-bold text-[#082a5e] dark:text-white transition-colors tracking-tight line-clamp-1 text-start">
                                 {idea.title}
                             </h3>
                             <p className="text-xs sm:text-sm text-base-content/60 leading-relaxed line-clamp-2 min-h-10 text-start">
@@ -78,7 +78,7 @@ const MyIdeaList = ({ ideas }) => {
                         <div className="pt-4 border-t border-base-200/60 grid grid-cols-2 gap-2 text-left">
                             <div>
                                 <p className="text-[10px] uppercase font-bold text-base-content/30 tracking-wider">Est. Budget</p>
-                                <p className="text-xs font-bold text-[#082a5e]">{idea.estimatedBudget}</p>
+                                <p className="text-xs font-bold text-[#082a5e] dark:text-white">{idea.estimatedBudget}</p>
                             </div>
                             <div className="text-right">
                                 <p className="text-[10px] uppercase font-bold text-base-content/30 tracking-wider">Founder</p>
@@ -89,7 +89,7 @@ const MyIdeaList = ({ ideas }) => {
                         {/* Card Button */}
                         <Link href={`/ideas/${idea._id}`} className="block w-full">
                             <Button
-                                className="w-full bg-base-200 hover:bg-[#082a5e] text-[#082a5e] hover:text-white font-bold h-11 rounded-xl transition-all duration-300 text-xs flex items-center justify-center gap-1.5 border border-transparent group/btn"
+                                className="w-full bg-base-200 hover:bg-[#082a5e] text-[#082a5e] hover:text-white dark:text-white font-bold h-11 rounded-xl transition-all duration-300 text-xs flex items-center justify-center gap-1.5 border border-transparent group/btn"
                             >
                                 View Details
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 transform group-hover/btn:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -73,7 +73,7 @@ const FeaturedCategories = () => {
                     <div className="space-y-3">
                         <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md">
+                            <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-500/10 px-2.5 py-1 rounded-md">
                                 Structural Taxonomy
                             </span>
                         </div>
@@ -90,15 +90,14 @@ const FeaturedCategories = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {categories.map((category) => (
                         <Link key={category.id} href={`/idea?category=${category.id}`} className="group block">
-                            <Card 
-                                isPressable
-                                className="w-full h-full bg-base-100 dark:bg-zinc-900/40 border border-base-200 dark:border-zinc-800 rounded-3xl transition-all duration-300 group-hover:border-[#082a5e]/30 dark:group-hover:border-blue-500/30 shadow-xs group-hover:shadow-[0_15px_35px_rgba(8,42,94,0.03)] dark:group-hover:shadow-[0_15px_35px_rgba(0,0,0,0.2)] overflow-hidden">
+                            <Card
+                                className="w-full h-full bg-base-100 border border-base-200/80 rounded-3xl transition-all duration-300 hover:border-[#082a5e]/30 shadow-sm hover:shadow-[0_20px_45px_rgba(8,42,94,0.04)] overflow-hidden">
                                 
                                 <div className="p-6 flex flex-col justify-between items-start gap-4">
                                     {/* Icon & Count Badge */}
                                     <div className="w-full flex items-center justify-between">
                                         <div className="p-3 bg-[#082a5e]/5 dark:bg-blue-950/40 rounded-2xl group-hover:bg-[#082a5e] dark:group-hover:bg-blue-600 transition-colors duration-300">
-                                            {/* Injecting Icon and making it white on hover */}
+                                            {/* Icon */}
                                             <div className="group-hover:text-white transition-colors duration-300">
                                                 {category.icon}
                                             </div>

@@ -65,7 +65,7 @@ const NavBar = () => {
 
                     {/* Brand Logo */}
                     <Link href={'/'} className="flex items-center gap-2 text-xl font-bold tracking-tight text-[#082a5e] hover:opacity-90 transition-opacity">
-                        <span className="p-2 bg-[#082a5e] text-white rounded-xl shadow-sm text-sm font-black">IV</span>
+                        <span className="p-2 bg-[#082a5e] dark:bg-white text-white dark:text-[#082a5e] rounded-xl shadow-sm text-sm font-black">IV</span>
                         <span className="hidden sm:inline bg-linear-to-r select-none from-[#082a5e] to-[#1e4ebd] bg-clip-text text-transparent">IdeaVault</span>
                     </Link>
                 </div>

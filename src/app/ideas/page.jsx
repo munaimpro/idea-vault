@@ -19,7 +19,7 @@ const IdeasPage = async () => {
             {/* Background overlay */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-100 bg-[radial-gradient(ellipse_at_top,rgba(8,42,94,0.04),transparent_50%)] pointer-events-none" />
 
-            {/* 1. Page Title */}
+            {/* Page Header */}
             <div className="w-full border-b border-base-200/60 bg-base-200/20 backdrop-blur-sm py-12 md:py-16 mb-12">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div className="space-y-3 max-w-xl">
@@ -48,7 +48,7 @@ const IdeasPage = async () => {
                 </div>
             </div>
 
-            {/* 2. Page Content */}
+            {/* Page Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {ideas.length === 0 ? (
                     <div className="w-full py-20 text-center border-2 border-dashed border-base-200 rounded-3xl space-y-4">

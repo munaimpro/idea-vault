@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner";
 import FeaturedCategories from "@/components/FeaturedCategories";
+import Features from "@/components/Features";
 import TrendingIdeas from "@/components/TrendingIdeas";
 
 export default async function Home() {
@@ -14,6 +15,7 @@ export default async function Home() {
       <Banner></Banner>
       <TrendingIdeas ideas={ideas}></TrendingIdeas>
       <FeaturedCategories></FeaturedCategories>
+      <Features></Features>
     </div>
   );
 }

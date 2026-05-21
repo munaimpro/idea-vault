@@ -33,7 +33,7 @@ const Banner = () => {
     ];
 
     return (
-        <div className="w-full relative bg-base-100">
+        <div className="w-full relative">
             <Swiper
                 modules={[Autoplay, Pagination]}
                 spaceBetween={0}
