@@ -3,11 +3,10 @@ import { Button, Form, TextArea } from '@heroui/react';
 import { authClient } from '@/lib/auth-client';
 import { toast } from 'react-hot-toast';
 import { useState } from 'react';
-import { CommentItem } from './CommentItem'; // চাইল্ড ফাইলটি ইমপোর্ট করে নিন
+import { CommentItem } from './CommentItem';
 
 const IdeaComment = ({ comments, currentUserId, currentUserName, ideaId }) => {
 
-    // State to render new comment in the UI
     const [existingComments, setComments] = useState(comments);
 
     const onSubmit = async (event) => {
@@ -80,7 +79,7 @@ const IdeaComment = ({ comments, currentUserId, currentUserName, ideaId }) => {
                         key={comment._id}
                         comment={comment}
                         currentUserId={currentUserId}
-                        setComments={setComments} // স্টেট আপডেট করার জন্য মেথড পাস করা হল
+                        setComments={setComments}
                     />
                 ))}
             </div>

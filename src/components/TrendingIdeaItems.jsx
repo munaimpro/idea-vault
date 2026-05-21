@@ -15,7 +15,7 @@ const TrendingIdeaItems = ({ideas}) => {
                     <div className="absolute top-0 left-0 w-full h-0.75 bg-linear-to-r from-[#082a5e] to-[#1e4ebd] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
 
                     <div>
-                        {/* 1. Card Image */}
+                        {/* Card Image */}
                         <div className="h-48 w-full bg-base-200 relative overflow-hidden group-hover:scale-[1.01] transition-transform duration-300">
                             {/* Fallback pattern if image is missing */}
                             <Image
@@ -25,7 +25,7 @@ const TrendingIdeaItems = ({ideas}) => {
                                 height={100}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />
-                            {/* Dark Vignette Overlay for Text Legibility */}
+                            {/* Dark Overlay for Text Legibility */}
                             <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-black/20" />
 
                             {/* Idea Category */}
@@ -42,7 +42,7 @@ const TrendingIdeaItems = ({ideas}) => {
                             </div>
                         </div>
 
-                        {/* 2. Card Content*/}
+                        {/* Card Content*/}
                         <div className="p-6 pb-2 space-y-2">
                             <h3 className="text-start not-last:text-lg font-bold text-[#082a5e] dark:text-white transition-colors tracking-tight line-clamp-1">
                                 {idea.title}
@@ -66,7 +66,7 @@ const TrendingIdeaItems = ({ideas}) => {
                         </div>
                     </div>
 
-                    {/* 3. Budget & Button */}
+                    {/* Budget & Button */}
                     <div className="p-6 pt-0 mt-2 space-y-4">
                         <div className="pt-4 border-t border-base-200/60 grid grid-cols-2 gap-2 text-left">
                             <div>

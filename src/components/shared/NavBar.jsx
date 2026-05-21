@@ -1,5 +1,4 @@
 'use client';
-import Image from "next/image";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import { authClient } from "@/lib/auth-client";
@@ -27,7 +26,7 @@ const NavBar = () => {
             <li><NavLink href={'/interactions'}>My Interactions</NavLink></li>
             <li>
                 <details>
-                    <summary className="text-[#082a5e] font-medium">
+                    <summary className="relative px-4 py-2 rounded-lg text-[15px] font-medium transition-all duration-200 block w-full lg:w-auto text-base-content/80 hover:text-[#082a5e] dark:hover:text-white hover:bg-base-200/60">
                         Profile
                     </summary>
 

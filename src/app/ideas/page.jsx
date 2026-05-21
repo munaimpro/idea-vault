@@ -1,5 +1,5 @@
 import IdeaList from '@/components/IdeaList';
-import IdeaFilterBar from '@/components/IdeaFilterBar'; // নতুন কম্পোনেন্টটি ইমপোর্ট করুন
+import IdeaFilterBar from '@/components/IdeaFilterBar';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
@@ -7,16 +7,13 @@ export const metadata = {
     title: "Ideas | IdeaVault"
 }
 
-// Next.js অ্যাপ রাউটারে searchParams প্রপস হিসেবে সরাসরি পাওয়া যায়
 const IdeasPage = async ({ searchParams }) => {
-    // searchParams রিজলভ করা (Next.js নিয়মানুযায়ী অবজেক্ট আকারে আনা)
     const resolvedParams = await searchParams;
     const search = resolvedParams?.search || '';
     const category = resolvedParams?.category || '';
     const startDate = resolvedParams?.startDate || '';
     const endDate = resolvedParams?.endDate || '';
 
-    // কুয়েরি স্ট্রিং তৈরি করা
     const query = new URLSearchParams({
         search,
         category,
@@ -24,9 +21,8 @@ const IdeasPage = async ({ searchParams }) => {
         endDate
     }).toString();
 
-    // ফিল্টারসহ ডাইনামিক কুয়েরি রিকোয়েস্ট (প্রথমে কোনো কুয়েরি না থাকলে ডিফল্ট সব আইডিয়াই আসবে)
     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea?${query}`, {
-        cache: 'no-store' // ডাইনামিক ফিল্টারিং ডেটার জন্য ক্যাশ অফ রাখা নিরাপদ
+        cache: 'no-store'
     });
     const ideas = await response.json();
     console.log(ideas);
@@ -39,7 +35,6 @@ const IdeasPage = async ({ searchParams }) => {
 
             {/* Page Header */}
             <div className="w-full border-b border-base-200/60 bg-base-200/20 backdrop-blur-sm py-12 md:py-16 mb-12">
-                {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6"> */}
                     <div className="space-y-3 max-w-xl px-4 sm:px-6 lg:px-8">
                         <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e] bg-[#082a5e]/5 px-3 py-1 rounded-md">
                             Ecosystem Feed
@@ -58,7 +53,6 @@ const IdeasPage = async ({ searchParams }) => {
                             <IdeaFilterBar />
                         </Suspense>
                     </div>
-                {/* </div> */}
             </div>
 
             {/* Page Content */}

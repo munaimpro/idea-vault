@@ -47,7 +47,7 @@ const ProfileUpdateForm = () => {
         <div>
              <Form onSubmit={onSubmit} className="flex flex-col gap-6">
 
-                        {/* Name Input Vector */}
+                        {/* Name Input */}
                         <TextField isRequired name="name" type="text" className="w-full">
                             <Label className="text-xs font-bold uppercase tracking-wide text-[#082a5e]/80 mb-1.5 block">
                                 Name
@@ -59,7 +59,7 @@ const ProfileUpdateForm = () => {
                             <FieldError className="text-xs text-error mt-1" />
                         </TextField>
 
-                        {/* Image URL Vector */}
+                        {/* Image URL */}
                         <TextField isRequired name="image" type="url" className="w-full">
                             <Label className="text-xs font-bold uppercase tracking-wide text-[#082a5e]/80 mb-1.5 block">
                                 Image URL
@@ -74,21 +74,16 @@ const ProfileUpdateForm = () => {
                             <FieldError className="text-xs text-error mt-1" />
                         </TextField>
 
-                        {/* Actions Control Panel (Perfectly aligned at bottom-right on bigger screens) */}
+                        {/* Actions Control Panel */}
                         <div className="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 pt-4 w-full border-t border-base-200 mt-2">
-                            <Button
-                                onClick={() => router.push('/profile')}
-                                type="button"
-                                className="w-full sm:w-auto px-6 border border-base-200 bg-base-100 hover:bg-base-200 text-base-content/80 font-bold h-11 rounded-xl transition-all duration-200 text-xs"
-                            >
-                                Cancel
-                            </Button>
+                            <Button onClick={() => router.push('/profile')}
+                                type="button" className="w-full sm:w-auto px-6 border border-base-200 bg-base-100 hover:bg-base-200 text-base-content/80 font-bold h-11 rounded-xl transition-all duration-200 text-xs">Cancel</Button>
                             <Button
                                 isLoading={isSubmitting}
                                 className="w-full sm:w-auto px-8 bg-[#082a5e] hover:bg-[#051c40] text-white font-bold h-11 rounded-xl transition-all duration-200 text-xs"
                                 type="submit"
                             >
-                                Commit Structural Changes
+                                Save Changes
                             </Button>
                         </div>
 

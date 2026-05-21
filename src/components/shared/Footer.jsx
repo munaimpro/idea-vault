@@ -75,13 +75,13 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Bottom Bar: Copyright & Legal */}
+            {/* Bottom Footer: Copyright */}
             <div className="border-t border-base-200 bg-base-200/30">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-base-content/60">
                     <p>© {new Date().getFullYear()} IdeaVault. All rights reserved.</p>
                     <div className="flex items-center gap-6">
-                        <Link href="/privacy" className="hover:text-[#082a5e] transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-[#082a5e] transition-colors">Terms of Service</Link>
+                        <Link href="/privacy" className="hover:text-[#082a5e] dark:hover:text-white transition-colors">Privacy Policy</Link>
+                        <Link href="/terms" className="hover:text-[#082a5e] dark:hoover:text-white transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </div>

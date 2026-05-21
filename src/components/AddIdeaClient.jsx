@@ -84,7 +84,7 @@ const AddIdeaClient = () => {
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-                {/* LEFT SIDE: Dribbble Style Real-time Preview Card (Sticky on desktop) */}
+                {/* LEFT SIDE: Preview Card */}
                 <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
                     <div className="space-y-2">
                         <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e]">
@@ -98,7 +98,7 @@ const AddIdeaClient = () => {
                         </p>
                     </div>
 
-                    {/* Interactive Showcase Card */}
+                    {/* Showcase Card */}
                     <div className="bg-base-100 border border-base-200 shadow-xl shadow-base-200/50 rounded-3xl overflow-hidden group transition-all duration-300 hover:shadow-2xl">
                         <div className="h-44 bg-linear-to-br from-[#082a5e]/10 to-[#1e4ebd]/10 relative flex items-center justify-center overflow-hidden">
                             {previewData.imageUrl ? (
@@ -125,7 +125,7 @@ const AddIdeaClient = () => {
                     </div>
                 </div>
 
-                {/* RIGHT SIDE: Behance Style Clean Structured Form */}
+                {/* RIGHT SIDE: Add Idea Form */}
                 <div className="lg:col-span-8 bg-base-100/60 backdrop-blur-xl border border-base-200 p-6 sm:p-10 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)]">
                     <Form onSubmit={onSubmit} className="space-y-6">
 
@@ -230,7 +230,7 @@ const AddIdeaClient = () => {
                             </TextField>
                         </div>
 
-                        {/* Submission CTA */}
+                        {/* Submission Button */}
                         <div className="pt-4">
                             <Button
                                 type="submit"

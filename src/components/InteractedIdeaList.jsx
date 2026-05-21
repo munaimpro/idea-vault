@@ -2,8 +2,6 @@
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { DeleteConfirmModal } from "./DeleteIdeaConfirmModal";
-import UpdateIdeaModal from "./UpdateIdeaModal";
 
 const InteractedIdeaList = ({ ideas }) => {
     return (

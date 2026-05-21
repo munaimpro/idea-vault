@@ -1,5 +1,3 @@
-'use client'
-import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import userAvater from '@/assets/avater.webp';
 import Link from 'next/link';
@@ -8,8 +6,10 @@ export const metadata = {
  title: "Profile | IdeaVault"
 }
 
-const ProfilePage = () => {
-    const { data: session } = authClient.useSession();
+const ProfilePage = async () => {
+    const session = await auth.api.getSession({
+        headers: await headers()
+    });
     const user = session?.user;
 
     return (

@@ -25,7 +25,7 @@ export function DeleteConfirmModal({ idea }) {
 
     return (
         <AlertDialog>
-            {/* Floating Glassmorphic Delete Action Button */}
+            {/* Delete Button */}
             <Button
                 variant="danger"
                 className="min-w-8 w-8 h-8 rounded-lg p-0 bg-red-500/20 hover:bg-red-500/40 text-red-200 hover:text-white backdrop-blur-md border border-red-500/20 shadow-xs transition-all duration-200"

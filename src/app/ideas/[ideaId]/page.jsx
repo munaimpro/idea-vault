@@ -36,24 +36,6 @@ const IdeaDetailsPage = async ({ params }) => {
     const comments = await commentResponse.json();
     console.log("Comment for this idea: ", comments);
 
-
-    const staticComments = [
-        {
-            _id: "c1",
-            userName: "Rajeev",
-            text: "This architecture solves a critical scalability bottleneck. Would love to see the data flow model!",
-            createdAt: "2026-05-19T08:45:00.000Z",
-            userId: "user_rajeev_123"
-        },
-        {
-            _id: "c2",
-            userName: "Natasha Hamilton",
-            text: "The bio-engineering integrations here are fascinating. Great problem definition.",
-            createdAt: "2026-05-19T09:12:00.000Z",
-            userId: "6a0b1379c0f13da5d9bc0ba6"
-        }
-    ];
-
     // Find Session User
     const session = await auth.api.getSession({
         headers: await headers()
@@ -193,12 +175,6 @@ const IdeaDetailsPage = async ({ params }) => {
                                 <span className="text-sm font-bold text-base-content/70">{idea.userName}</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="pt-2">
-                        {/* <Button className="w-full bg-[#082a5e] hover:bg-[#051c40] text-white font-black h-12 rounded-xl transition-all shadow-md text-xs tracking-wide">
-                            Initiate Collaboration Inquiry
-                        </Button> */}
                     </div>
                 </div>
 
