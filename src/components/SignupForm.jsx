@@ -5,10 +5,6 @@ import { redirect } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
 
-export const metadata = {
-    title: "Sign Up | IdeaVault"
-}
-
 const SignupForm = () => {
 
     const onSubmit = async (event) => {
