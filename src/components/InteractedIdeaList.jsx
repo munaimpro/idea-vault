@@ -18,7 +18,7 @@ const InteractedIdeaList = ({ ideas }) => {
                         {/* 1. Card Image */}
                         <div className="h-48 w-full bg-base-200 relative overflow-hidden group-hover:scale-[1.01] transition-transform duration-300">
                             <Image
-                                src={idea.imageURL || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop"}
+                                src={idea.imageURL || idea.imageUrl || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop"}
                                 alt={idea.title}
                                 width={100}
                                 height={100}
