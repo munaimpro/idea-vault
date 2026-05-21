@@ -1,4 +1,6 @@
 import IdeaList from '@/components/IdeaList';
+import Link from 'next/link';
+import { Suspense } from 'react';
 
 export const metadata = {
     title: "Ideas | IdeaVault"
@@ -48,7 +50,17 @@ const IdeasPage = async () => {
 
             {/* 2. Page Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <IdeaList ideas={ideas}></IdeaList>
+                {ideas.length === 0 ? (
+                    <div className="w-full py-20 text-center border-2 border-dashed border-base-200 rounded-3xl space-y-4">
+                        <p className="font-medium text-base-content/50 text-sm">No idea available right now. You can <Link href={'/add-idea'}>share</Link> some ideas</p>
+                    </div>
+                ) : (
+                    <div className="text-center">
+                        <Suspense fallback={<span className="text-gray-500 my-25 loading loading-bars loading-lg"></span>}>
+                            <IdeaList ideas={ideas} />  
+                        </Suspense>
+                    </div>
+                )}
             </div>
 
         </div>

@@ -2,6 +2,8 @@ import MyIdeaList from '@/components/MyIdeaList';
 import { auth } from '@/lib/auth';
 import { authClient } from '@/lib/auth-client';
 import { headers } from 'next/headers';
+import Link from 'next/link';
+import { Suspense } from 'react';
 
 export const metadata = {
  title: "My Ideas | IdeaVault"
@@ -70,10 +72,14 @@ const MyIdeasPage = async () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {ideas.length === 0 ? (
                     <div className="w-full py-20 text-center border-2 border-dashed border-base-200 rounded-3xl space-y-4">
-                        <p className="font-medium text-base-content/40">No architectures compiled yet. Begin by broadcasting your first concept.</p>
+                        <p className="font-medium text-base-content/50 text-sm">No idea shared yet. Begin by <Link href={'/add-idea'}>broadcasting</Link> your first concept.</p>
                     </div>
                 ) : (
-                        <MyIdeaList ideas={ideas} />
+                    <div className="text-center">
+                        <Suspense fallback={<span className="text-gray-500 my-25 loading loading-bars loading-lg"></span>}>
+                            <MyIdeaList ideas={ideas} />  
+                        </Suspense>
+                    </div>
                 )}
             </div>
 

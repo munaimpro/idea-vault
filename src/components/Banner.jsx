@@ -79,7 +79,7 @@ const Banner = () => {
 
                                     <div className="flex flex-wrap gap-2">
                                         <span className="badge badge-outline text-white">
-                                            AI
+                                            Tech
                                         </span>
 
                                         <span className="badge badge-outline text-white">
@@ -96,7 +96,7 @@ const Banner = () => {
                                     </div>
 
                                     <div className="pt-2">
-                                        <Link  href="/ideas" className="btn bg-white hover:bg-base-200 text-[#082a5e] border-none font-bold rounded-xl px-8 shadow-lg shadow-[#082a5e]/20 transition-all duration-300 hover:scale-[1.02] btn-sm sm:btn-md">
+                                        <Link  href={'/ideas'} className="btn bg-white hover:bg-base-200 text-[#082a5e] border-none font-bold rounded-xl px-8 shadow-lg shadow-[#082a5e]/20 transition-all duration-300 hover:scale-[1.02] btn-sm sm:btn-md">
                                             Explore Ideas
                                         </Link>
                                     </div>

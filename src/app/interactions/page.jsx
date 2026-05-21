@@ -2,6 +2,7 @@ import InteractedIdeaList from '@/components/MyIdeaList';
 import { auth } from '@/lib/auth';
 import { authClient } from '@/lib/auth-client';
 import { headers } from 'next/headers';
+import { Suspense } from 'react';
 
 export const metadata = {
  title: "Interations | IdeaVault"
@@ -68,15 +69,16 @@ const InteractionsPage = async () => {
 
             {/* Page Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {ideas.length === 0 ? (
+                {ideas.length > 0 ? (
                     <div className="w-full py-20 text-center border-2 border-dashed border-base-200 rounded-3xl space-y-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mx-auto text-base-content/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
                         <p className="font-medium text-base-content/50 text-sm">No interactions found. You have not joined any discussions or left comments on any ideas yet.</p>
                     </div>
                 ) : (
-                        <InteractedIdeaList ideas={ideas} />
+                    <div className="text-center">
+                        <Suspense fallback={<span className="text-gray-500 my-25 loading loading-bars loading-lg"></span>}>
+                            <InteractedIdeaList ideas={ideas} />
+                        </Suspense>
+                    </div>
                 )}
             </div>
 

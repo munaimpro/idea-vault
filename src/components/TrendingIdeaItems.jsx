@@ -1,12 +1,11 @@
-"use client";
+'use client'
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 
-const IdeaList = ({ ideas }) => {
-
+const TrendingIdeaItems = ({ideas}) => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {ideas.map((idea) => (
                 <div
                     key={idea._id}
@@ -98,4 +97,4 @@ const IdeaList = ({ ideas }) => {
     );
 };
 
-export default IdeaList;
+export default TrendingIdeaItems;

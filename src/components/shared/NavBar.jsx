@@ -4,6 +4,7 @@ import Link from "next/link";
 import NavLink from "./NavLink";
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
+import ThemeSwitch from "../ThemeSwitch";
 
 const NavBar = () => {
 
@@ -30,7 +31,7 @@ const NavBar = () => {
                         Profile
                     </summary>
 
-                    <ul className="p-2 bg-base-100 rounded-xl shadow-xl w-52 z-[9999]">
+                    <ul className="p-2 bg-base-100 rounded-xl shadow-xl w-52 z-9999">
                         <li>
                             <NavLink href="/profile">
                                 Profile Management
@@ -95,6 +96,8 @@ const NavBar = () => {
                             </Link>
                         )
                     }
+
+                    <ThemeSwitch></ThemeSwitch>
                 </div>
             </div>
         </div>

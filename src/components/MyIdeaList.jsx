@@ -26,7 +26,7 @@ const MyIdeaList = ({ ideas }) => {
                                 height={100}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />
-                            {/* Dark Vignette Overlay for Text Legibility */}
+                            {/* Overlay for text visibility */}
                             <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-black/20" />
 
                             {/* Idea Category */}
@@ -51,10 +51,10 @@ const MyIdeaList = ({ ideas }) => {
 
                         {/* 2. Card Content*/}
                         <div className="p-6 pb-2 space-y-2">
-                            <h3 className="text-lg font-bold text-base-content group-hover:text-[#082a5e] transition-colors tracking-tight line-clamp-1">
+                            <h3 className="text-lg font-bold text-base-content group-hover:text-[#082a5e] transition-colors tracking-tight line-clamp-1 text-start">
                                 {idea.title}
                             </h3>
-                            <p className="text-xs sm:text-sm text-base-content/60 leading-relaxed line-clamp-2 min-h-10">
+                            <p className="text-xs sm:text-sm text-base-content/60 leading-relaxed line-clamp-2 min-h-10 text-start">
                                 {idea.shortDescription}
                             </p>
 

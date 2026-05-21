@@ -1,11 +1,19 @@
 import Banner from "@/components/Banner";
+import FeaturedCategories from "@/components/FeaturedCategories";
 import TrendingIdeas from "@/components/TrendingIdeas";
 
-export default function Home() {
+export default async function Home() {
+  
+  // Find trending ideas
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/trending-idea`);
+  const ideas = await response.json();
+  console.log(ideas);
+
   return (
     <div className="mt-17">
       <Banner></Banner>
-      <TrendingIdeas></TrendingIdeas>
+      <TrendingIdeas ideas={ideas}></TrendingIdeas>
+      <FeaturedCategories></FeaturedCategories>
     </div>
   );
 }
