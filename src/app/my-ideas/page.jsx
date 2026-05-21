@@ -41,10 +41,10 @@ const MyIdeasPage = async () => {
 
                     {/* Left Meta Side */}
                     <div className="space-y-3 max-w-xl">
-                        <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e] bg-[#082a5e]/5 px-3 py-1 rounded-md">
+                        <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e] dark:text-white bg-[#082a5e]/5 px-3 py-1 rounded-md">
                             Creator Dashboard
                         </span>
-                        <h1 className="text-3xl sm:text-4xl font-black text-[#082a5e] tracking-tight">
+                        <h1 className="text-3xl sm:text-4xl font-black text-[#082a5e] dark:text-white tracking-tight">
                             My Shared Ideas
                         </h1>
                         <p className="text-sm text-base-content/60 leading-relaxed">
@@ -56,7 +56,7 @@ const MyIdeasPage = async () => {
                     <div className="flex items-center gap-4 sm:gap-6 bg-base-100 p-4 rounded-2xl border border-base-200/80 shadow-sm self-start lg:self-auto">
                         <div className="px-2">
                             <p className="text-[10px] uppercase font-bold text-base-content/30 tracking-widest mb-0.5">Total Ideas</p>
-                            <p className="text-2xl font-black text-[#082a5e]">{ideas.length}</p>
+                            <p className="text-2xl font-black text-[#082a5e] dark:text-white">{ideas.length}</p>
                         </div>
                         <div className="w-px h-10 bg-base-200" />
                         <div className="px-2">

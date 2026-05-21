@@ -59,14 +59,6 @@ const Features = () => {
                                         {feat.desc}
                                     </p>
                                 </div>
-
-                                <Button
-                                    variant="light"
-                                    size="sm"
-                                    className="font-bold text-xs p-0 min-w-0 h-auto text-[#082a5e] dark:text-blue-400 data-[hover=true]:bg-transparent"
-                                >
-                                    Review Framework <ArrowChevronRight></ArrowChevronRight>
-                                </Button>
                             </div>
                         </Card>
                     ))}

@@ -36,10 +36,10 @@ const IdeasPage = async ({ searchParams }) => {
             {/* Page Header */}
             <div className="w-full border-b border-base-200/60 bg-base-200/20 backdrop-blur-sm py-12 md:py-16 mb-12">
                     <div className="space-y-3 max-w-xl px-4 sm:px-6 lg:px-8">
-                        <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e] bg-[#082a5e]/5 px-3 py-1 rounded-md">
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e] dark:text-white bg-[#082a5e]/5 px-3 py-1 rounded-md">
                             Ecosystem Feed
                         </span>
-                        <h1 className="text-3xl sm:text-4xl font-black text-[#082a5e] tracking-tight">
+                        <h1 className="text-3xl sm:text-4xl font-black text-[#082a5e] dark:text-white tracking-tight">
                             Explore Disruptive Concepts
                         </h1>
                         <p className="text-sm text-base-content/60 leading-relaxed">
@@ -59,7 +59,7 @@ const IdeasPage = async ({ searchParams }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {ideas.length === 0 ? (
                     <div className="w-full py-20 text-center border-2 border-dashed border-base-200 rounded-3xl space-y-4">
-                        <p className="font-medium text-base-content/50 text-sm">No idea available right now. You can <Link href={'/add-idea'} className="text-[#082a5e] underline">share</Link> some ideas</p>
+                        <p className="font-medium text-base-content/50 text-sm">No idea available right now. You can <Link href={'/add-idea'} className="text-[#082a5e] dark:text-white underline">share</Link> some ideas</p>
                     </div>
                 ) : (
                     <div className="text-center">

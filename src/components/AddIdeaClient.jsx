@@ -87,10 +87,10 @@ const AddIdeaClient = () => {
                 {/* LEFT SIDE: Preview Card */}
                 <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
                     <div className="space-y-2">
-                        <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e]">
+                        <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e] dark:text-white">
                             Live Sandbox
                         </span>
-                        <h2 className="text-2xl font-black text-[#082a5e] tracking-tight">
+                        <h2 className="text-2xl font-black text-[#082a5e] dark:text-white tracking-tight">
                             Forge Your Vision
                         </h2>
                         <p className="text-xs text-base-content/60 leading-relaxed">
@@ -111,7 +111,7 @@ const AddIdeaClient = () => {
                             </span>
                         </div>
                         <div className="p-6 space-y-3">
-                            <h3 className="text-lg font-bold text-[#082a5e] line-clamp-1">
+                            <h3 className="text-lg font-bold text-[#082a5e] dark:text-white line-clamp-1">
                                 {previewData.title || "Untitled Disruptive Idea"}
                             </h3>
                             <p className="text-xs text-base-content/60 line-clamp-2 min-h-8">
@@ -131,17 +131,17 @@ const AddIdeaClient = () => {
 
                         {/* Section 1: Basic Identity */}
                         <div className="border-b border-base-200 pb-4">
-                            <h3 className="text-sm font-bold text-[#082a5e] uppercase tracking-wider">01. Core Identity</h3>
+                            <h3 className="text-sm font-bold text-[#082a5e] dark:text-white uppercase tracking-wider">01. Core Identity</h3>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <TextField isRequired name="title" className="w-full">
-                                <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Idea Title</Label>
+                                <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block dark:text-white">Idea Title</Label>
                                 <Input placeholder="e.g., MediaVault AI Pro" onChange={handleInputChange} name="title" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
                             </TextField>
 
                             <div className="flex flex-col">
-                                <label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Category</label>
+                                <label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block dark:text-white">Category</label>
                                 <select
                                     name="category"
                                     onChange={handleInputChange}
@@ -157,12 +157,12 @@ const AddIdeaClient = () => {
                         </div>
 
                         <TextField isRequired name="shortDescription">
-                            <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Short Description</Label>
+                            <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block dark:text-white">Short Description</Label>
                             <Input placeholder="Sum up your startup in one punchy sentence" onChange={handleInputChange} name="shortDescription" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
                         </TextField>
 
                         <div className="flex flex-col">
-                            <label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Detailed Narrative</label>
+                            <label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block dark:text-white">Detailed Narrative</label>
                             <textarea
                                 required
                                 name="detailedDescription"
@@ -174,12 +174,12 @@ const AddIdeaClient = () => {
 
                         {/* Section 2: Deep Context & Analytics */}
                         <div className="border-b border-base-200 pb-4 pt-4">
-                            <h3 className="text-sm font-bold text-[#082a5e] uppercase tracking-wider">02. Strategic Blueprint</h3>
+                            <h3 className="text-sm font-bold text-[#082a5e] uppercase tracking-wider dark:text-white">02. Strategic Blueprint</h3>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div className="flex flex-col">
-                                <label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Problem Statement</label>
+                                <label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block dark:text-white">Problem Statement</label>
                                 <textarea
                                     required
                                     name="problemStatement"
@@ -190,7 +190,7 @@ const AddIdeaClient = () => {
                             </div>
 
                             <div className="flex flex-col">
-                                <label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Proposed Solution</label>
+                                <label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block dark:text-white">Proposed Solution</label>
                                 <textarea
                                     required
                                     name="proposedSolution"
@@ -203,29 +203,29 @@ const AddIdeaClient = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <TextField isRequired name="targetAudience">
-                                <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Target Audience</Label>
+                                <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block dark:text-white">Target Audience</Label>
                                 <Input placeholder="e.g., Content Creators, Small Business Owners" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
                             </TextField>
 
                             <TextField name="estimatedBudget">
-                                <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Estimated Budget <span className="text-base-content/30 font-normal">(Optional)</span></Label>
+                                <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 dark:text-white block">Estimated Budget <span className="text-base-content/30 font-normal">(Optional)</span></Label>
                                 <Input placeholder="e.g., $5,000 - $10,000" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
                             </TextField>
                         </div>
 
                         {/* Section 3: Metadata & Assets */}
                         <div className="border-b border-base-200 pb-4 pt-4">
-                            <h3 className="text-sm font-bold text-[#082a5e] uppercase tracking-wider">03. Assets & Discovery</h3>
+                            <h3 className="text-sm font-bold text-[#082a5e] uppercase tracking-wider dark:text-white">03. Assets & Discovery</h3>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <TextField isRequired name="imageUrl">
-                                <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Image URL</Label>
+                                <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 dark:text-white block">Image URL</Label>
                                 <Input placeholder="Unsplash or vector art image link" onChange={handleInputChange} name="imageUrl" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
                             </TextField>
 
                             <TextField name="tags">
-                                <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block">Tags <span className="text-base-content/30 font-normal">(Optional)</span></Label>
+                                <Label className="text-xs font-bold uppercase text-[#082a5e]/80 dark:text-white mb-1.5 block">Tags <span className="text-base-content/30 font-normal">(Optional)</span></Label>
                                 <Input placeholder="e.g., saas, automation, eco" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
                             </TextField>
                         </div>
