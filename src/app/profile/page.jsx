@@ -8,7 +8,7 @@ export const metadata = {
 
 const ProfilePage = async () => {
     const session = await auth.api.getSession({
-        headers: await headers()
+        headers: await headers() 
     });
     const user = session?.user;
 
