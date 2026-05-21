@@ -1,5 +1,9 @@
 import ProfileUpdateForm from '@/components/ProfileUpdateForm';
 
+export const metadata = {
+ title: "Profile | IdeaVault"
+}
+
 const ProfileUpdatePage = () => {
 
     return (
