@@ -22,11 +22,11 @@ const SigninPage = () => {
 
                         {/* Header Text */}
                         <div className="mb-6 space-y-1 mx-1">
-                            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a5e] tracking-tight">
+                            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a5e] dark:text-wite tracking-tight">
                                 Welcome Back
                             </h2>
                             <p className="text-xs sm:text-sm text-base-content/60">
-                                New to the IdeaVault? <Link href="/signup" className="text-[#082a5e] font-semibold hover:underline">Create an Account</Link>
+                                New to the IdeaVault? <Link href="/signup" className="text-[#082a5e] dark:text-white font-semibold hover:underline">Create an Account</Link>
                             </p>
                         </div>
 
@@ -36,7 +36,7 @@ const SigninPage = () => {
                 </div>
 
                 {/* Right Side: Brand Pitch & Aesthetics (Flipped to Right on Desktop via ordering) */}
-                <div className="hidden lg:flex lg:col-span-5 bg-gradient-to-br from-[#082a5e] to-[#123e7f] p-12 flex-col justify-between text-white relative lg:order-last">
+                <div className="hidden lg:flex lg:col-span-5 bg-linear-to-br from-[#082a5e] to-[#123e7f] p-12 flex-col justify-between text-white relative lg:order-last">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent)] pointer-events-none" />
 
                     {/* Brand Identity */}

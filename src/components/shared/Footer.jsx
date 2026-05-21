@@ -10,12 +10,13 @@ const Footer = () => {
                     {/* Column 1: Brand & About */}
                     <div className="lg:col-span-2 space-y-4">
                         <Link href={'/'} className="flex items-center gap-2 text-xl font-bold tracking-tight text-[#082a5e]">
-                            <span className="p-2 bg-[#082a5e] text-white rounded-xl shadow-sm text-sm font-black select-none">IV</span>
-                            <span className="bg-gradient-to-r from-[#082a5e] to-[#1e4ebd] bg-clip-text text-transparent">IdeaVault</span>
+                            <span className="p-2 bg-[#082a5e] dark:bg-white text-white dark:text-[#082a5e] rounded-xl shadow-sm text-sm font-black select-none">IV</span>
+                            <span className="bg-linear-to-r from-[#082a5e] to-[#1e4ebd] bg-clip-text text-transparent dark:tex-white">IdeaVault</span>
                         </Link>
                         <p className="text-sm text-base-content/70 max-w-sm leading-relaxed">
                             IdeaVault is a next-generation hub for entrepreneurs, creators, and innovators to share, collaborate, and bring groundbreaking startup ideas to life.
                         </p>
+
                         {/* Social Links */}
                         <div className="flex items-center gap-4 pt-2">
                             <a href="#" className="btn btn-ghost btn-circle btn-sm hover:bg-base-200 text-[#082a5e] hover:text-[#1e4ebd]" aria-label="Facebook">
@@ -32,37 +33,37 @@ const Footer = () => {
 
                     {/* Column 2: Platform Links */}
                     <div className="space-y-4">
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[#082a5e]">Platform</h3>
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[#082a5e] dark:text-white">Platform</h3>
                         <ul className="space-y-2.5 text-sm">
-                            <li><Link href="/ideas" className="text-base-content/80 hover:text-[#082a5e] transition-colors">Browse Ideas</Link></li>
-                            <li><Link href="/categories" className="text-base-content/80 hover:text-[#082a5e] transition-colors">Categories</Link></li>
-                            <li><Link href="/add-idea" className="text-base-content/80 hover:text-[#082a5e] transition-colors">Submit an Idea</Link></li>
-                            <li><Link href="/trending" className="text-base-content/80 hover:text-[#082a5e] transition-colors">Trending Projects</Link></li>
+                            <li><Link href="/ideas" className="text-base-content/80 hover:text-[#082a5e] dark:hover:text-white transition-colors">Browse Ideas</Link></li>
+                            <li><Link href="/categories" className="text-base-content/80 hover:text-[#082a5e] dark:hover:text-white transition-colors">Categories</Link></li>
+                            <li><Link href="/add-idea" className="text-base-content/80 hover:text-[#082a5e] dark:hover:text-white transition-colors">Submit an Idea</Link></li>
+                            <li><Link href="/" className="text-base-content/80 hover:text-[#082a5e] dark:hover:text-white transition-colors">Trending Ideas</Link></li>
                         </ul>
                     </div>
 
                     {/* Column 3: Resources */}
                     <div className="space-y-4">
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[#082a5e]">Resources</h3>
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[#082a5e] dark:text-white">Resources</h3>
                         <ul className="space-y-2.5 text-sm">
-                            <li><Link href="/blog" className="text-base-content/80 hover:text-[#082a5e] transition-colors">Startup Blog</Link></li>
-                            <li><Link href="/guidelines" className="text-base-content/80 hover:text-[#082a5e] transition-colors">Community Rules</Link></li>
-                            <li><Link href="/faq" className="text-base-content/80 hover:text-[#082a5e] transition-colors">Help & FAQs</Link></li>
+                            <li><Link href="/blog" className="text-base-content/80 hover:text-[#082a5e] dark:hover:text-white transition-colors">Startup Blog</Link></li>
+                            <li><Link href="/guidelines" className="text-base-content/80 hover:text-[#082a5e] dark:hover:text-white transition-colors">Community Rules</Link></li>
+                            <li><Link href="/faq" className="text-base-content/80 hover:text-[#082a5e] dark:hover:text-white transition-colors">Help & FAQs</Link></li>
                         </ul>
                     </div>
 
                     {/* Column 4: Contact Info */}
                     <div className="space-y-4">
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[#082a5e]">Contact Us</h3>
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[#082a5e] dark:text-white">Contact Us</h3>
                         <ul className="space-y-3 text-sm text-base-content/80">
                             <li className="flex items-start gap-2.5">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#082a5e] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#082a5e] dark:text-white shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
-                                <a href="mailto:support@ideavault.com" className="hover:text-[#082a5e] transition-colors">support@ideavault.com</a>
+                                <a href="mailto:support@ideavault.com" className="hover:text-[#082a5e] dark:hover:text-white transition-colors">support@ideavault.com</a>
                             </li>
                             <li className="flex items-start gap-2.5">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#082a5e] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#082a5e] dark:text-white shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>

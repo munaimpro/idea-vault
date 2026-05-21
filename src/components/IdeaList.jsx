@@ -83,7 +83,7 @@ const IdeaList = ({ ideas }) => {
                         {/* Card Button */}
                         <Link href={`/ideas/${idea._id}`} className="block w-full">
                             <Button
-                                className="w-full bg-base-200 hover:bg-[#082a5e] text-[#082a5e] hover:text-white font-bold h-11 rounded-xl transition-all duration-300 text-xs flex items-center justify-center gap-1.5 border border-transparent group/btn"
+                                className="w-full bg-base-200 hover:bg-[#082a5e] text-[#082a5e] dark:text-white hover:text-white font-bold h-11 rounded-xl transition-all duration-300 text-xs flex items-center justify-center gap-1.5 border border-transparent group/btn"
                             >
                                 View Details
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 transform group-hover/btn:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

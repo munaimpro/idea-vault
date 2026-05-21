@@ -1,4 +1,5 @@
 import IdeaList from '@/components/IdeaList';
+import IdeaFilterBar from '@/components/IdeaFilterBar'; // নতুন কম্পোনেন্টটি ইমপোর্ট করুন
 import Link from 'next/link';
 import { Suspense } from 'react';
 
@@ -6,10 +7,27 @@ export const metadata = {
     title: "Ideas | IdeaVault"
 }
 
-const IdeasPage = async () => {
-    
-    // Find all ideas
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea`)
+// Next.js অ্যাপ রাউটারে searchParams প্রপস হিসেবে সরাসরি পাওয়া যায়
+const IdeasPage = async ({ searchParams }) => {
+    // searchParams রিজলভ করা (Next.js নিয়মানুযায়ী অবজেক্ট আকারে আনা)
+    const resolvedParams = await searchParams;
+    const search = resolvedParams?.search || '';
+    const category = resolvedParams?.category || '';
+    const startDate = resolvedParams?.startDate || '';
+    const endDate = resolvedParams?.endDate || '';
+
+    // কুয়েরি স্ট্রিং তৈরি করা
+    const query = new URLSearchParams({
+        search,
+        category,
+        startDate,
+        endDate
+    }).toString();
+
+    // ফিল্টারসহ ডাইনামিক কুয়েরি রিকোয়েস্ট (প্রথমে কোনো কুয়েরি না থাকলে ডিফল্ট সব আইডিয়াই আসবে)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea?${query}`, {
+        cache: 'no-store' // ডাইনামিক ফিল্টারিং ডেটার জন্য ক্যাশ অফ রাখা নিরাপদ
+    });
     const ideas = await response.json();
     console.log(ideas);
 
@@ -21,8 +39,8 @@ const IdeasPage = async () => {
 
             {/* Page Header */}
             <div className="w-full border-b border-base-200/60 bg-base-200/20 backdrop-blur-sm py-12 md:py-16 mb-12">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
-                    <div className="space-y-3 max-w-xl">
+                {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6"> */}
+                    <div className="space-y-3 max-w-xl px-4 sm:px-6 lg:px-8">
                         <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e] bg-[#082a5e]/5 px-3 py-1 rounded-md">
                             Ecosystem Feed
                         </span>
@@ -34,30 +52,25 @@ const IdeasPage = async () => {
                         </p>
                     </div>
 
-                    {/* Search Input */}
-                    <div className="w-full md:max-w-xs relative">
-                        <input
-                            type="text"
-                            placeholder="Search concepts, tags..."
-                            className="w-full bg-base-100 hover:bg-base-200/50 border border-base-200 focus:border-[#082a5e] focus:outline-none rounded-xl h-11 pl-10 pr-4 text-sm transition-all shadow-sm"
-                        />
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 absolute left-3.5 top-3.5 text-base-content/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
+                    {/* Filter and Search Bar */}
+                <div className="w-full relative px-4 sm:px-6 lg:px-8">
+                        <Suspense fallback={<div className="h-11 w-full bg-base-200 animate-pulse rounded-xl" />}>
+                            <IdeaFilterBar />
+                        </Suspense>
                     </div>
-                </div>
+                {/* </div> */}
             </div>
 
             {/* Page Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {ideas.length === 0 ? (
                     <div className="w-full py-20 text-center border-2 border-dashed border-base-200 rounded-3xl space-y-4">
-                        <p className="font-medium text-base-content/50 text-sm">No idea available right now. You can <Link href={'/add-idea'}>share</Link> some ideas</p>
+                        <p className="font-medium text-base-content/50 text-sm">No idea available right now. You can <Link href={'/add-idea'} className="text-[#082a5e] underline">share</Link> some ideas</p>
                     </div>
                 ) : (
                     <div className="text-center">
                         <Suspense fallback={<span className="text-gray-500 my-25 loading loading-bars loading-lg"></span>}>
-                            <IdeaList ideas={ideas} />  
+                            <IdeaList ideas={ideas} />
                         </Suspense>
                     </div>
                 )}

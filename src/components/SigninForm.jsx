@@ -4,6 +4,7 @@ import { authClient } from '@/lib/auth-client';
 import { redirect } from 'next/navigation';
 import toast from 'react-hot-toast';
 import React from 'react';
+import Link from 'next/link';
 
 const SigninForm = () => {
 
@@ -57,7 +58,7 @@ const SigninForm = () => {
                                     return null;
                                 }}
                             >
-                                <Label className="text-xs font-bold uppercase tracking-wide text-[#082a5e]/80 mb-1.5 block">Email</Label>
+                                <Label className="text-xs font-bold uppercase tracking-wide text-[#082a5e]/80 dark:text-white mb-1.5 block">Email</Label>
                                 <Input placeholder="john@example.com" className="w-full bg-base-200/50 hover:bg-base-200 border border-base-200 focus:border-[#082a5e] rounded-xl transition-all h-11 px-4 text-sm" />
                                 <FieldError className="text-xs text-error mt-1" />
                             </TextField>
@@ -69,7 +70,7 @@ const SigninForm = () => {
                                 type="password"
                                 className="w-full"
                             >
-                                <Label className="text-xs font-bold uppercase tracking-wide text-[#082a5e]/80 mb-1.5 block">Password</Label>
+                                <Label className="text-xs font-bold uppercase tracking-wide text-[#082a5e]/80 dark:text-white mb-1.5 block">Password</Label>
                                 <Input placeholder="••••••••" className="w-full bg-base-200/50 hover:bg-base-200 border border-base-200 focus:border-[#082a5e] rounded-xl transition-all h-11 px-4 text-sm" />
                                 <Description className="text-[11px] text-base-content/50 leading-normal mt-1.5 block">
                                     Must be at least 6 characters with 1 uppercase and 1 lowercase
@@ -79,6 +80,10 @@ const SigninForm = () => {
 
                             {/* Actions Group */}
                             <div className="flex flex-col gap-3.5 pt-2">
+                                <p className="text-xs sm:text-sm text-base-content/60">
+                                    <Link href="#" className="text-[#082a5e] dark:text-white font-semibold hover:underline">Forgot Password?</Link>
+                                </p>
+                                
                                 <Button className="w-full bg-[#082a5e] hover:bg-[#051c40] text-white font-bold h-11 rounded-xl shadow-md shadow-[#082a5e]/15 transition-all duration-200 text-sm" type="submit">
                                     Sign In
                                 </Button>
@@ -94,7 +99,7 @@ const SigninForm = () => {
                                     className="w-full border border-base-200 bg-base-100 hover:bg-base-200 text-base-content/80 font-bold h-11 rounded-xl transition-all duration-200 text-sm flex items-center justify-center gap-2"
                                     variant="outline"
                                 >
-                                    {/* Inline Flat Material Google Icon */}
+                                    {/* Google Icon */}
                                     <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24">
                                         <path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0112 4.909c1.69 0 3.218.6 4.418 1.582L19.91 3C17.782 1.145 15.055 0 12 0 7.27 0 3.198 2.698 1.24 6.65l4.026 3.115z" />
                                         <path fill="#FBBC05" d="M16.04 15.345c-1.045.691-2.42 1.1-4.04 1.1a7.07 7.07 0 01-6.734-4.855L1.24 14.705C3.198 18.655 7.27 21.355 12 21.355c2.973 0 5.81-.982 7.973-2.773l-3.932-3.237z" />
