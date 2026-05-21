@@ -107,7 +107,7 @@ const SignupForm = () => {
 
                     <div className="relative flex py-2 items-center">
                         <div className="flex-grow border-t border-base-200"></div>
-                        <span className="flex-shrink mx-4 text-xs text-base-content/40 font-medium bg-transparent">Or sign up with</span>
+                        <span className="flex-shrink mx-4 text-xs text-base-content/40 font-medium bg-transparent">Or</span>
                         <div className="flex-grow border-t border-base-200"></div>
                     </div>
 

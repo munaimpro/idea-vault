@@ -23,7 +23,7 @@ const TrendingIdeas = async ({ideas}) => {
                             Explore the most upvoted and highly anticipated startup mechanics built by creators worldwide this week.
                         </p>
                     </div>
-                    <Link href={'/idea'} className="py-2 px-4 bg-[#082a5e]/5 text-[#082a5e] hover:bg-[#082a5e] hover:text-white font-bold rounded-xl transition-all self-start md:self-auto"> Explore All Trends </Link>
+                    <Link href={'/idea'} className="py-2 px-4 bg-[#082a5e]/5 text-[#082a5e] hover:bg-[#082a5e] dark:bg-[#082a5e]/5 dark:text-white dark:hover:text-white font-bold rounded-xl transition-all self-start md:self-auto"> Explore All Trends </Link>
                 </div>
 
                 {/* Section Content */}

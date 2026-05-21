@@ -36,7 +36,7 @@ const ProfilePage = async () => {
 
                     {/* Information Grid */}
                     <div className="space-y-3 w-full mb-8">
-                        <h2 className="text-2xl font-black text-[#082a5e] tracking-tight sm:text-3xl lg:text-4xl">
+                        <h2 className="text-2xl font-black text-[#082a5e] dark:text-white tracking-tight sm:text-3xl lg:text-4xl">
                             {user?.name || "N/A"}
                         </h2>
 

@@ -22,7 +22,7 @@ const SigninPage = () => {
 
                         {/* Header Text */}
                         <div className="mb-6 space-y-1 mx-1">
-                            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a5e] dark:text-wite tracking-tight">
+                            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a5e] dark:text-white dark:text-wite tracking-tight">
                                 Welcome Back
                             </h2>
                             <p className="text-xs sm:text-sm text-base-content/60">
