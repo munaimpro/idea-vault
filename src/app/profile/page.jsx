@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import userAvater from '@/assets/avater.webp';
 import Link from 'next/link';
+import { auth } from '@/lib/auth';
 
 export const metadata = {
  title: "Profile | IdeaVault"
