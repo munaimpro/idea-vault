@@ -55,7 +55,7 @@ const InteractionsPage = async () => {
                     <div className="flex items-center gap-4 sm:gap-6 bg-base-100 p-4 rounded-2xl border border-base-200/80 shadow-sm self-start lg:self-auto">
                         <div className="px-2">
                             <p className="text-[10px] uppercase font-bold text-base-content/30 tracking-widest mb-0.5">Commented On</p>
-                            <p className="text-2xl font-black text-[#082a5e] dark:text-white">{ideas.length} {ideas.length === 1 ? 'Idea' : 'Ideas'}</p>
+                            <p className="text-2xl font-black text-[#082a5e] dark:text-white">{ideas.length} {ideas.length === 0 ? 'Idea' : 'Ideas'}</p>
                         </div>
                         <div className="w-px h-10 bg-base-200" />
                         <div className="px-2">
@@ -69,7 +69,7 @@ const InteractionsPage = async () => {
 
             {/* Page Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {ideas.length > 0 ? (
+                {ideas.length < 1 ? (
                     <div className="w-full py-20 text-center border-2 border-dashed border-base-200 rounded-3xl space-y-3">
                         <p className="font-medium text-base-content/50 text-sm">No interactions found. You have not joined any discussions or left comments on any ideas yet.</p>
                     </div>

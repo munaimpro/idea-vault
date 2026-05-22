@@ -4,6 +4,7 @@ import NavLink from "./NavLink";
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
 import ThemeSwitch from "../ThemeSwitch";
+import { redirect } from "next/navigation";
 
 const NavBar = () => {
 
@@ -15,6 +16,7 @@ const NavBar = () => {
 
     const handleLogout = () => {
         authClient.signOut();
+        redirect('/');
     }
 
     const links = (

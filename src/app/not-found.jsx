@@ -24,7 +24,7 @@ const NotFound = () => {
 
                 {/* Engaging Message */}
                 <div className="space-y-3">
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a5e] tracking-tight">
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a5e] dark:text-white tracking-tight">
                         This concept does not exist yet.
                     </h2>
                     <p className="text-sm sm:text-base text-base-content/60 leading-relaxed max-w-md mx-auto">
@@ -36,14 +36,14 @@ const NotFound = () => {
                 <div className="p-6 bg-base-200/40 backdrop-blur-md border border-base-200/60 rounded-3xl shadow-sm text-left space-y-4">
                     <div className="flex items-center gap-2">
                         <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#082a5e]/70">Suggested Operations</span>
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#082a5e]/70 dark:text-white">Don't Stop, You can still...</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-semibold">
-                        <Link href="/ideas" className="p-3 bg-base-100 hover:bg-[#082a5e]/5 border border-base-200 rounded-xl flex items-center gap-2 text-base-content/80 hover:text-[#082a5e] transition-all">
+                        <Link href="/ideas" className="p-3 bg-base-100 hover:bg-[#082a5e]/5 border border-base-200 rounded-xl flex items-center gap-2 text-base-content/80 hover:text-[#082a5e] dark:hover:text-white transition-all">
                             Explore Other Ideas
                         </Link>
-                        <Link href="/add-idea" className="p-3 bg-base-100 hover:bg-[#082a5e]/5 border border-base-200 rounded-xl flex items-center gap-2 text-base-content/80 hover:text-[#082a5e] transition-all">
-                            Post This as an Idea
+                        <Link href="/add-idea" className="p-3 bg-base-100 hover:bg-[#082a5e]/5 border border-base-200 rounded-xl flex items-center gap-2 text-base-content/80 hover:text-[#082a5e] dark:hover:text-white transition-all">
+                            Post Your Impressive Ideas
                         </Link>
                     </div>
                 </div>

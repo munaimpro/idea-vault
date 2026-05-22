@@ -49,7 +49,7 @@ const ProfileUpdateForm = () => {
 
                         {/* Name Input */}
                         <TextField isRequired name="name" type="text" className="w-full">
-                            <Label className="text-xs font-bold uppercase tracking-wide text-[#082a5e]/80 mb-1.5 block">
+                            <Label className="text-xs font-bold uppercase tracking-wide text-[#082a5e]/80 mb-1.5 dark:text-white block">
                                 Name
                             </Label>
                             <Input
@@ -61,7 +61,7 @@ const ProfileUpdateForm = () => {
 
                         {/* Image URL */}
                         <TextField isRequired name="image" type="url" className="w-full">
-                            <Label className="text-xs font-bold uppercase tracking-wide text-[#082a5e]/80 mb-1.5 block">
+                            <Label className="text-xs font-bold uppercase tracking-wide text-[#082a5e]/80 mb-1.5 dark:text-white block">
                                 Image URL
                             </Label>
                             <Input

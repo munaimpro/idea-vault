@@ -45,11 +45,11 @@ const IdeaFilterBar = () => {
                         className="w-full bg-base-100 hover:bg-base-200/50 border border-base-200 focus:border-[#082a5e] focus:outline-none rounded-xl h-11 px-3 text-sm transition-all shadow-sm"
                     >
                         <option value="">All Categories</option>
-                        <option value="saas">SaaS</option>
-                        <option value="fintech">FinTech</option>
-                        <option value="ai">AI</option>
                         <option value="tech">Tech</option>
-                        <option value="edtech">EdTech</option>
+                        <option value="saas">SaaS</option>
+                        <option value="ai">Artificial Intelligence</option>
+                        <option value="education">EdTech</option>
+                        <option value="fintech">FinTech</option>
                     </select>
                 </div>
             </div>

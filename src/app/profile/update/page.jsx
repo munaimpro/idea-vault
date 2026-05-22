@@ -14,7 +14,7 @@ const ProfileUpdatePage = () => {
 
                 {/* Section Header Text */}
                 <div className="mb-8 pb-6 border-b border-base-200">
-                    <h2 className="text-xl sm:text-2xl font-black text-[#082a5e] tracking-tight">
+                    <h2 className="text-xl sm:text-2xl font-black text-[#082a5e] dark:text-white tracking-tight">
                         Update Your Profile
                     </h2>
                     <p className="text-xs sm:text-sm text-base-content/60 mt-1">

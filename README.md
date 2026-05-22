@@ -13,26 +13,31 @@ This project is built with a focus on authentication, idea management (CRUD), an
 ## 🚀 Features
 
 ### 👤 Authentication
+
 - Email & Password login
 - Google OAuth login
 - Protected routes (middleware-based access control)
 
 ### 💡 Idea Management
+
 - Create new startup ideas
 - Update existing ideas (modal-based editing)
 - Delete ideas with confirmation
 - View detailed idea pages
 
 ### 🔥 Idea Interaction
-- Like system for ideas
+
+- Comment system for ideas
 - Trending ideas section
 - Interacted ideas tracking
 
 ### 👥 User Features
+
 - Profile view and update system
 - User-specific idea dashboard ("My Ideas")
 
 ### 🎨 UI/UX
+
 - Fully responsive design (mobile, tablet, desktop)
 - Modern card-based layout
 - Dark mode support (Next Themes)
@@ -43,6 +48,7 @@ This project is built with a focus on authentication, idea management (CRUD), an
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - Next.js (App Router)
 - React.js
 - Tailwind CSS
@@ -50,11 +56,13 @@ This project is built with a focus on authentication, idea management (CRUD), an
 - next-themes
 
 ### Backend
+
 - Node.js (API layer / server)
 - MongoDB (Database)
 - Better Auth (Authentication system)
 
 ### Other Tools
+
 - Vercel (Deployment)
 - React Hot Toast (Notifications)
 
@@ -100,14 +108,11 @@ Project is deployed on Vercel:
 ## 📌 Future Improvements
 
 - Advanced search & filtering system
-- Comment system for ideas
 - Bookmark/favorite ideas
 - Pagination & infinite scroll
-- Admin dashboard
 
 ---
 
 ## 👨‍💻 Developer
 
 Built by **Munaim Khan**
-

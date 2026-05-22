@@ -147,11 +147,11 @@ const AddIdeaClient = () => {
                                     onChange={handleInputChange}
                                     className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] focus:outline-none rounded-xl px-4 h-11 text-sm text-base-content/80 transition-all cursor-pointer"
                                 >
-                                    <option value="Tech">Tech / SaaS</option>
-                                    <option value="AI">Artificial Intelligence</option>
-                                    <option value="Health">HealthTech</option>
-                                    <option value="Education">EdTech</option>
-                                    <option value="Fintech">FinTech</option>
+                                    <option value="tech">Tech / SaaS</option>
+                                    <option value="saas">SaaS</option>
+                                    <option value="ai">Artificial Intelligence</option>
+                                    <option value="education">EdTech</option>
+                                    <option value="fintech">FinTech</option>
                                 </select>
                             </div>
                         </div>
