@@ -48,7 +48,7 @@ const Banner = () => {
                     dynamicBullets: true
                 }}
                 navigation={false}
-                className="mySwiper rounded-2xl md:rounded-3xl overflow-hidden max-w-7xl mx-auto shadow-xl shadow-base-200"
+                className="mySwiper rounded-2xl md:rounded-3xl overflow-hidden max-w-7xl mx-auto shadow-xl shadow-base-200 dark:shadow-none"
             >
                 {slides.map((slide) => (
                     <SwiperSlide key={slide.id}>

@@ -15,7 +15,7 @@ export function DeleteConfirmModal({ idea }) {
             method: 'DELETE',
         })
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         if (data.deletedCount > 0) {
             router.refresh();

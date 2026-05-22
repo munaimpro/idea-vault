@@ -27,7 +27,7 @@ export const CommentItem = ({ comment, currentUserId, setComments }) => {
         });
 
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         if (data?.modifiedCount > 0) {
             toast.success("Comment updated successfully!");
@@ -55,7 +55,7 @@ export const CommentItem = ({ comment, currentUserId, setComments }) => {
             }
         });
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         if (data?.deletedCount > 0) {
             toast.success("Comment deleted successfully!");
@@ -70,7 +70,7 @@ export const CommentItem = ({ comment, currentUserId, setComments }) => {
         <div className="p-5 bg-base-200/30 border border-base-200 rounded-2xl space-y-2 transition-all hover:bg-base-200/50 relative group/item">
             <div className="flex items-center justify-between">
                 <div>
-                    <span className="text-sm font-bold text-[#082a5e] block">{comment.userName}</span>
+                    <span className="text-sm font-bold text-[#082a5e] dark:text-white block">{comment.userName}</span>
                     <span className="text-[10px] text-base-content/40 font-medium">
                         {new Date(comment.createdAt).toLocaleString()}
                     </span>

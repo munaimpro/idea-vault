@@ -7,7 +7,7 @@ export const metadata = {
 const ProfileUpdatePage = () => {
 
     return (
-        <div className="min-h-screen bg-base-100 flex justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-24 relative">
+        <div className="min-h-screen flex justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-24 relative">
 
             {/* Main Central Settings Container (Vercel & Stripe Dashboard Inspired) */}
             <div className="w-full max-w-2xl bg-base-100 border border-base-200 rounded-[24px] p-6 sm:p-10 lg:p-12">

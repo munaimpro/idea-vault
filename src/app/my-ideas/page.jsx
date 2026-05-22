@@ -16,21 +16,21 @@ const MyIdeasPage = async () => {
         headers: await headers()
     });
     const user = session?.user
-    console.log(user);
+    // console.log(user);
     const userId = user?.id;
-    console.log(userId);
+    // console.log(userId);
     
     // Getting Token
     const { data: tokenData } = await authClient.token();
-    console.log(tokenData);
+    // console.log(tokenData);
 
     // Find ideas posted by the session user
     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea-by-user/${userId}`)
     const ideas = await response.json();
-    console.log(ideas);
+    // console.log(ideas);
 
     return (
-        <div className="min-h-screen bg-base-100 pb-24 pt-24 relative overflow-hidden">
+        <div className="min-h-screen pb-24 pt-24 relative overflow-hidden">
 
             {/* Background Overlay */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-100 bg-[radial-gradient(ellipse_at_top,rgba(8,42,94,0.05),transparent_50%)] pointer-events-none" />
@@ -53,15 +53,15 @@ const MyIdeasPage = async () => {
                     </div>
 
                     {/* Right Meta Side */}
-                    <div className="flex items-center gap-4 sm:gap-6 bg-base-100 p-4 rounded-2xl border border-base-200/80 shadow-sm self-start lg:self-auto">
-                        <div className="px-2">
+                    <div className="w-full lg:w-fit flex items-center gap-4 sm:gap-6 bg-base-100 p-4 rounded-2xl border border-base-200/80 shadow-sm self-start lg:self-auto">
+                        <div className="w-full lg:w-fit px-2">
                             <p className="text-[10px] uppercase font-bold text-base-content/30 tracking-widest mb-0.5">Total Ideas</p>
                             <p className="text-2xl font-black text-[#082a5e] dark:text-white">{ideas.length}</p>
                         </div>
-                        <div className="w-px h-10 bg-base-200" />
-                        <div className="px-2">
+                        <div className="w-fit w-px h-10 bg-base-200" />
+                        <div className="w-full lg:w-fit px-2">
                             <p className="text-[10px] uppercase font-bold text-base-content/30 tracking-widest mb-0.5">Total Budget</p>
-                            <p className="text-2xl font-black text-[#082a5e]">0</p>
+                            <p className="text-2xl font-black text-[#082a5e] dark:text-white">0</p>
                         </div>
                     </div>
 

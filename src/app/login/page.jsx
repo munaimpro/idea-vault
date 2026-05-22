@@ -7,7 +7,7 @@ export const metadata = {
 
 const SigninPage = () => {
     return (
-        <div className="min-h-screen bg-base-100 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-28 pb-12 relative overflow-hidden">
+        <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-28 pb-12 relative overflow-hidden">
 
             {/* Background Aesthetic Blur Blobs */}
             <div className="absolute top-1/4 right-1/12 w-80 h-80 bg-[#082a5e]/5 rounded-full blur-3xl pointer-events-none" />
@@ -62,7 +62,7 @@ const SigninPage = () => {
 
                     {/* Micro Footer */}
                     <p className="text-xs text-white/50">
-                        © {new Date().getFullYear()} MediaVault Inc.
+                        © {new Date().getFullYear()} IdeaVault
                     </p>
                 </div>
 

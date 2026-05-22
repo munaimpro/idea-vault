@@ -15,7 +15,7 @@ const ProfilePage = async () => {
     const user = session?.user;
 
     return (
-        <div className="min-h-screen bg-base-100 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-36 pb-16 relative">
+        <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-36 pb-16 relative">
 
             {/* Clean Premium Profile Card (Responsive Width: Larger on LG screens) */}
             <div className="w-full max-w-md lg:max-w-2xl bg-base-100 border border-base-200 rounded-[32px] relative group transition-all duration-300 hover:border-base-300 mt-14">
@@ -40,11 +40,11 @@ const ProfilePage = async () => {
                             {user?.name || "N/A"}
                         </h2>
 
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-base-200/50 rounded-xl max-w-full">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-base-200/50  rounded-xl max-w-full ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-[#39557e]/60 shrink-0">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                             </svg>
-                            <span className="text-xs sm:text-sm lg:text-base font-medium text-[#39557e] truncate block">
+                            <span className="text-xs sm:text-sm lg:text-base font-medium text-[#39557e] dark:text-white truncate block">
                                 {user?.email}
                             </span>
                         </div>

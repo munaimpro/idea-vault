@@ -52,7 +52,7 @@ const NavBar = () => {
                 {/* Navbar Start: Logo & Mobile Menu */}
                 <div className="flex items-center gap-2">
                     <div className="dropdown lg:hidden">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle text-[#082a5e] hover:bg-base-200">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle text-[#082a5e] dark:text-white hover:bg-base-200">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" />
                             </svg>
@@ -65,7 +65,7 @@ const NavBar = () => {
                     {/* Brand Logo */}
                     <Link href={'/'} className="flex items-center gap-2 text-xl font-bold tracking-tight text-[#082a5e] hover:opacity-90 transition-opacity">
                         <span className="p-2 bg-[#082a5e] dark:bg-white text-white dark:text-[#082a5e] rounded-xl shadow-sm text-sm font-black">IV</span>
-                        <span className="hidden sm:inline bg-linear-to-r select-none from-[#082a5e] to-[#1e4ebd] bg-clip-text text-transparent">IdeaVault</span>
+                        <span className="hidden sm:inline bg-linear-to-r select-none from-[#082a5e] to-[#1e4ebd] bg-clip-text text-transparent dark:text-white">IdeaVault</span>
                     </Link>
                 </div>
 

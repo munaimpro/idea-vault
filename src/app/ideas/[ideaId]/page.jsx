@@ -10,7 +10,7 @@ export const metadata = {
 
 const IdeaDetailsPage = async ({ params }) => {
     const { ideaId } = await params;
-    console.log("Idea id: ", ideaId);
+    // console.log("Idea id: ", ideaId);
 
     // Get Token
     const { token } = await auth.api.getToken({
@@ -25,7 +25,7 @@ const IdeaDetailsPage = async ({ params }) => {
     });
     const idea = await ideaResponse.json();
     const {_id, userName, title, shortDescription, detailedDescription, createdAt, category, imageURL, estimatedBudget, tags, targetAudience } = idea;
-    console.log("Idea details", idea);
+    // console.log("Idea details", idea);
 
     // Find all comment for this idea
     const commentResponse = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/comment/${ideaId}`, {
@@ -34,7 +34,7 @@ const IdeaDetailsPage = async ({ params }) => {
         }
     });
     const comments = await commentResponse.json();
-    console.log("Comment for this idea: ", comments);
+    // console.log("Comment for this idea: ", comments);
 
     // Find Session User
     const session = await auth.api.getSession({
@@ -43,8 +43,8 @@ const IdeaDetailsPage = async ({ params }) => {
     const user = session?.user;
     const currentUserId = user?.id;
     const currentUserName = user?.name;
-    console.log('Current User id: ', currentUserId);
-    console.log('Current User name: ', currentUserName);
+    // console.log('Current User id: ', currentUserId);
+    // console.log('Current User name: ', currentUserName);
 
     return (
         <div className="min-h-screen bg-base-100 pb-24 pt-24 relative overflow-hidden">
@@ -61,11 +61,11 @@ const IdeaDetailsPage = async ({ params }) => {
                             <span className="text-xs font-bold uppercase tracking-widest text-white bg-[#082a5e] px-3 py-1 rounded-full">
                                 {category}
                             </span>
-                            <span className="text-xs font-medium text-base-content/40">
+                            <span className="text-xs font-medium text-base-content/40 dark:text-white">
                                 Broadcasted on {new Date(createdAt).toLocaleDateString()}
                             </span>
                         </div>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#082a5e] tracking-tight max-w-4xl leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#082a5e] tracking-tight max-w-4xl leading-tight dark:text-white">
                             {title}
                         </h1>
                         <p className="text-sm sm:text-base text-base-content/70 font-medium max-w-3xl leading-relaxed">
@@ -84,7 +84,7 @@ const IdeaDetailsPage = async ({ params }) => {
                     {/* Hero Image Section */}
                     <div className="w-full h-64 sm:h-96 bg-base-200 rounded-3xl overflow-hidden border border-base-200 shadow-sm relative group">
                         <Image
-                            src={imageURL}
+                            src={idea.imageURL || idea.imageUrl || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop" }
                             alt={title}
                             width={1200}
                             height={600}
@@ -121,7 +121,7 @@ const IdeaDetailsPage = async ({ params }) => {
 
                     {/* Detail Description */}
                     <div className="bg-base-100 border border-base-200 p-6 sm:p-8 rounded-2xl space-y-4">
-                        <h3 className="text-lg font-bold text-[#082a5e] tracking-tight">Full Narrative & Architecture</h3>
+                        <h3 className="text-lg font-bold text-[#082a5e] tracking-tight dark:text-white">Full Narrative & Architecture</h3>
                         <p className="text-sm text-base-content/70 leading-relaxed whitespace-pre-line">
                             {detailedDescription}
                         </p>
@@ -134,7 +134,7 @@ const IdeaDetailsPage = async ({ params }) => {
                         {Array.isArray(idea.tags) &&
                             idea.tags.map((tag, tag_id) => (
                                 <span
-                                    key={tag_id} className="text-xs font-semibold text-[#082a5e] bg-[#082a5e]/5 px-3 py-1 rounded-xl hover:bg-[#082a5e]/10 transition-colors cursor-pointer"
+                                    key={tag_id} className="text-xs font-semibold text-[#082a5e] bg-[#082a5e]/5 px-3 py-1 rounded-xl hover:bg-[#082a5e]/10 transition-colors cursor-pointer dark:text-base-content dark:bg-dark"
                                 >
                                     #{tag}
                                 </span>
@@ -149,8 +149,8 @@ const IdeaDetailsPage = async ({ params }) => {
                 {/* Right Side: Metadata */}
                 <div className="lg:col-span-4 lg:sticky lg:top-24 bg-base-100 border border-base-200 rounded-3xl p-6 shadow-sm space-y-6">
                     <div>
-                        <span className="text-[10px] uppercase font-bold tracking-widest text-base-content/30 block mb-1">Target Capitalization</span>
-                        <h3 className="text-3xl font-black text-[#082a5e]">
+                        <span className="text-[10px] uppercase font-bold tracking-widest text-base-content/30 block mb-1 dark:text-white">Target Capitalization</span>
+                        <h3 className="text-3xl font-black text-[#082a5e] dark:text-white">
                             ${estimatedBudget} <span className="text-xs font-bold text-base-content/40 uppercase tracking-normal">USD</span>
                         </h3>
                     </div>

@@ -15,21 +15,21 @@ const InteractionsPage = async () => {
         headers: await headers()
     });
     const user = session?.user
-    console.log(user);
+    // console.log(user);
     const userId = user?.id;
-    console.log(userId);
+    // console.log(userId);
     
     // Getting Token
     const { data: tokenData } = await authClient.token();
-    console.log(tokenData);
+    // console.log(tokenData);
 
     // Find ideas posted by the session user
     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/commented-idea/${userId}`)
     const ideas = await response.json();
-    console.log(ideas);
+    // console.log(ideas);
 
     return (
-        <div className="min-h-screen bg-base-100 pb-24 pt-24 relative overflow-hidden">
+        <div className="min-h-screen pb-24 pt-24 relative overflow-hidden">
 
             {/* Background Overlay */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-100 bg-[radial-gradient(ellipse_at_top,rgba(8,42,94,0.05),transparent_50%)] pointer-events-none" />

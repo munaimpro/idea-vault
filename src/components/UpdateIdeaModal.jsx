@@ -7,7 +7,8 @@ import toast from 'react-hot-toast';
 
 const UpdateIdeaModal = ({ idea }) => {
     
-    console.log(idea); const {_id, title, category, targetAudience, problemStatement, proposedSolution, shortDescription, detailedDescription, imageURL, estimatedBudget, tags } = idea;
+    // console.log(idea);
+    const { _id, title, category, targetAudience, problemStatement, proposedSolution, shortDescription, detailedDescription, imageURL, estimatedBudget, tags } = idea;
 
     const router = useRouter();
 
@@ -21,7 +22,7 @@ const UpdateIdeaModal = ({ idea }) => {
         const ideaData = Object.fromEntries(formData.entries());
 
         const { data: tokenData } = await authClient.token();
-        console.log(tokenData);
+        // console.log(tokenData);
 
         const finalIdeaData = {
             ...ideaData,
@@ -30,7 +31,7 @@ const UpdateIdeaModal = ({ idea }) => {
             tags: ideaData.tags
                 ? ideaData.tags.split(',').map(tag => tag.trim()) : []
         }
-        console.log(finalIdeaData);
+        // console.log(finalIdeaData);
 
         const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/update-idea/${_id}`, {
             method: 'PATCH',
@@ -42,7 +43,7 @@ const UpdateIdeaModal = ({ idea }) => {
         });
 
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         if (data?.modifiedCount > 0) {
             toast.success("Your startup idea changed successfully!");

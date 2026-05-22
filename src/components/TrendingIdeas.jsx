@@ -4,7 +4,7 @@ import TrendingIdeaItems from "./TrendingIdeaItems";
 const TrendingIdeas = async ({ideas}) => {
 
     return (
-        <div className="py-20 bg-linear-to-b from-transparent via-base-200/20 to-transparent">
+        <div className="py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header */}
@@ -16,14 +16,14 @@ const TrendingIdeas = async ({ideas}) => {
                                 Whats Hot Right Now
                             </span>
                         </div>
-                        <h2 className="text-3xl sm:text-4xl font-black text-[#082a5e] tracking-tight">
+                        <h2 className="text-3xl sm:text-4xl font-black text-[#082a5e] dark:text-white tracking-tight">
                             Trending Ideas
                         </h2>
                         <p className="text-sm text-base-content/60 max-w-xl">
                             Explore the most upvoted and highly anticipated startup mechanics built by creators worldwide this week.
                         </p>
                     </div>
-                    <Link href={'/idea'} className="py-2 px-4 bg-[#082a5e]/5 text-[#082a5e] hover:bg-[#082a5e] dark:bg-[#082a5e]/5 dark:text-white dark:hover:text-white font-bold rounded-xl transition-all self-start md:self-auto"> Explore All Trends </Link>
+                    <Link href={'/ideas'} className="py-2 px-4 bg-[#082a5e]/5 dark:bg-[#082a5e] text-[#082a5e] dark:text-white hover:bg-[#082a5e] dark:hover:bg-[#082a5e] hover:text-white font-bold rounded-xl transition-all self-start md:self-auto"> Explore All Trends </Link>
                 </div>
 
                 {/* Section Content */}

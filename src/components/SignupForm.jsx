@@ -12,7 +12,7 @@ const SignupForm = () => {
         const formData = new FormData(event.currentTarget);
         const user = Object.fromEntries(formData.entries());
 
-        console.log(user);
+        // console.log(user);
 
         const { data, error } = await authClient.signUp.email({
             email: user.email,
@@ -22,7 +22,7 @@ const SignupForm = () => {
             callbackURL: '/'
         })
 
-        console.log(data, error);
+        // console.log(data, error);
 
         if (data) {
             redirect('/');

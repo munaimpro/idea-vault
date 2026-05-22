@@ -25,10 +25,10 @@ const IdeasPage = async ({ searchParams }) => {
         cache: 'no-store'
     });
     const ideas = await response.json();
-    console.log(ideas);
+    // console.log(ideas);
 
     return (
-        <div className="min-h-screen bg-base-100 pb-20 pt-24 relative overflow-hidden">
+        <div className="min-h-screen pb-20 pt-24 relative overflow-hidden">
 
             {/* Background overlay */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-100 bg-[radial-gradient(ellipse_at_top,rgba(8,42,94,0.04),transparent_50%)] pointer-events-none" />
@@ -36,7 +36,7 @@ const IdeasPage = async ({ searchParams }) => {
             {/* Page Header */}
             <div className="w-full border-b border-base-200/60 bg-base-200/20 backdrop-blur-sm py-12 md:py-16 mb-12">
                     <div className="space-y-3 max-w-xl px-4 sm:px-6 lg:px-8">
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e] dark:text-white bg-[#082a5e]/5 px-3 py-1 rounded-md">
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#082a5e] bg-[#082a5e]/5 dark:text-white dark:bg-dark-800 px-3 py-1 rounded-md">
                             Ecosystem Feed
                         </span>
                         <h1 className="text-3xl sm:text-4xl font-black text-[#082a5e] dark:text-white tracking-tight">

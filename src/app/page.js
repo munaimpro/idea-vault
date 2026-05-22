@@ -8,7 +8,7 @@ export default async function Home() {
   // Find trending ideas
   const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/trending-idea`);
   const ideas = await response.json();
-  console.log(ideas);
+  // console.log(ideas);
 
   return (
     <div className="mt-17">

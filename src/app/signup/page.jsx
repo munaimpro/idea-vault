@@ -7,7 +7,7 @@ export const metadata = {
 
 const SignupPage = () => {
     return (
-        <div className="min-h-screen bg-base-100 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-28 pb-12 relative overflow-hidden">
+        <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-28 pb-12 relative overflow-hidden">
 
             {/* Background */}
             <div className="absolute top-1/4 left-1/12 w-80 h-80 bg-[#082a5e]/5 rounded-full blur-3xl pointer-events-none" />

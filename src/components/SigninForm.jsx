@@ -15,7 +15,7 @@ const SigninForm = () => {
         const formData = new FormData(event.currentTarget);
         const user = Object.fromEntries(formData.entries());
     
-        console.log(user);
+        // console.log(user);
     
         const { data, error } = await authClient.signIn.email({
             email: user.email,
@@ -23,7 +23,7 @@ const SigninForm = () => {
             rememberMe: false,
         })
     
-        console.log(data, error);
+        // console.log(data, error);
     
         if (data) {
             // Reset form

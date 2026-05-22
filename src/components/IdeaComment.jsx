@@ -14,8 +14,14 @@ const IdeaComment = ({ comments, currentUserId, currentUserName, ideaId }) => {
         const form = event.currentTarget;
         const formData = new FormData(event.currentTarget);
         const commentData = Object.fromEntries(formData.entries());
+        // console.log(commentData.commentText);
 
         const { data: tokenData } = await authClient.token();
+
+        if (commentData.commentText == '') {
+            toast.error("Write your comment!");
+            return;
+        }
 
         const finalCommentData = {
             ...commentData,
@@ -54,20 +60,20 @@ const IdeaComment = ({ comments, currentUserId, currentUserName, ideaId }) => {
     return (
         <div className="pt-8 border-t border-base-200 space-y-6">
             {/* Comment Box Header */}
-            <h3 className="text-xl font-extrabold text-[#082a5e] tracking-tight flex items-center gap-2">
-                Discussion Engine
+            <h3 className="text-xl font-extrabold text-[#082a5e] dark:text-white tracking-tight flex items-center gap-2">
+                Share Your Opinion
                 <span className="text-xs bg-base-200 px-2.5 py-0.5 rounded-full text-base-content/60 font-semibold">
                     {existingComments.length}
                 </span>
             </h3>
 
             {/* Comment Form */}
-            <Form onSubmit={onSubmit} className="flex gap-3 items-start">
-                <div className="grow">
-                    <TextArea name="commentText" placeholder="Contribute technical feedback or funding interest..." rows={2} className="w-full bg-base-200/60 hover:bg-base-200 border border-base-200 focus:border-[#082a5e] focus:outline-none rounded-xl p-4 text-sm text-base-content transition-all resize-none shadow-inner"
+            <Form onSubmit={onSubmit} className="flex flex-col lg:flex-row gap-3 items-start">
+                <div className="grow w-full">
+                    <TextArea name="commentText" placeholder="Contribute technical feedback or funding interest..." rows={5} className="w-full bg-base-200/60 hover:bg-base-200 border border-base-200 focus:border-[#082a5e] focus:outline-none rounded-xl p-4 text-sm text-base-content transition-all resize-none shadow-inner"
                     />
                 </div>
-                <Button type="submit" className="bg-[#082a5e] hover:bg-[#051c40] text-white font-bold h-12 px-6 rounded-xl text-xs shadow-md transition-all">
+                <Button type="submit" className="bg-[#082a5e] hover:bg-[#051c40] text-white font-bold h-12 px-6 rounded-xl text-xs shadow-md transition-all w-full lg:w-fit">
                     Broadcast
                 </Button>
             </Form>

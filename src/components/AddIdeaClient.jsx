@@ -17,7 +17,7 @@ const AddIdeaClient = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        console.log(e.target.value);
+        // console.log(e.target.value);
         setPreviewData(prev => ({ ...prev, [name]: value }));
     };
 
@@ -33,7 +33,7 @@ const AddIdeaClient = () => {
         const ideaData = Object.fromEntries(formData.entries());
 
         const { data: tokenData } = await authClient.token();
-        console.log(tokenData);
+        // console.log(tokenData);
 
         const finalIdeaData = {
             ...ideaData,
@@ -45,7 +45,7 @@ const AddIdeaClient = () => {
             tags: ideaData.tags
                 ? ideaData.tags.split(',').map(tag => tag.trim()) : []
         }
-        console.log(finalIdeaData);
+        // console.log(finalIdeaData);
 
         const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea`, {
             method: 'POST',
@@ -57,7 +57,7 @@ const AddIdeaClient = () => {
         });
 
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         if (data?.insertedId) {
             toast.success("Your startup idea has been cataloged successfully!");
@@ -76,7 +76,7 @@ const AddIdeaClient = () => {
     };
 
     return (
-        <div className="min-h-screen bg-base-100 px-4 sm:px-6 lg:px-8 pt-28 pb-16 relative overflow-hidden">
+        <div className="min-h-screen px-4 sm:px-6 lg:px-8 pt-28 pb-16 relative overflow-hidden">
 
             {/* Soft Ambient Background Blur */}
             <div className="absolute top-10 right-5 w-96 h-96 bg-[#082a5e]/5 rounded-full blur-3xl pointer-events-none" />
@@ -137,7 +137,7 @@ const AddIdeaClient = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <TextField isRequired name="title" className="w-full">
                                 <Label className="text-xs font-bold uppercase text-[#082a5e]/80 mb-1.5 block dark:text-white">Idea Title</Label>
-                                <Input placeholder="e.g., MediaVault AI Pro" onChange={handleInputChange} name="title" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
+                                <Input placeholder="e.g., Food Rescue Hub" onChange={handleInputChange} name="title" className="w-full bg-base-200/50 border border-base-200 focus:border-[#082a5e] rounded-xl px-4 h-11 text-sm transition-all" />
                             </TextField>
 
                             <div className="flex flex-col">

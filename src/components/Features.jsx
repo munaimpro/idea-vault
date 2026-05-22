@@ -25,7 +25,7 @@ const features = [
 
 const Features = () => {
     return (
-        <div className="py-20 border-t border-base-200/40">
+        <div className="py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
                 {/* Section Header */}
@@ -49,10 +49,10 @@ const Features = () => {
                                 <div className={`absolute inset-0 bg-linear-to-br ${feat.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`} />
 
                                 <div className="space-y-4">
-                                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-base-content/50 bg-base-200/60 dark:bg-zinc-800 px-2.5 py-1 rounded-md">
+                                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-base-content/50 bg-base-200/60 dark:bg-dark-800 px-2.5 py-1 rounded-md">
                                         {feat.badge}
                                     </span>
-                                    <h3 className="text-xl font-black text-base-content tracking-tight">
+                                    <h3 className="text-[#082a5e] dark:text-white text-xl font-bold tracking-tight">
                                         {feat.title}
                                     </h3>
                                     <p className="text-sm text-base-content/60 leading-relaxed">

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const NotFound = () => {
     return (
-        <div className="min-h-screen bg-base-100 flex flex-col items-center justify-center px-6 relative overflow-hidden pt-24 pb-12 mt-20">
+        <div className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden pt-24 pb-12 mt-20">
 
             {/* Background Aesthetic Elements */}
             <div className="absolute top-1/4 left-1/10 w-72 h-72 bg-[#082a5e]/5 rounded-full blur-3xl" />
@@ -13,7 +13,7 @@ const NotFound = () => {
 
                 {/* Creative 404 Identity */}
                 <div className="relative inline-block select-none animate-bounce duration-1000">
-                    <h1 className="text-9xl font-black tracking-tighter bg-gradient-to-b from-[#082a5e] to-[#1e4ebd] bg-clip-text text-transparent opacity-90">
+                    <h1 className="text-9xl font-black tracking-tighter bg-linear-to-b from-[#082a5e] to-[#1e4ebd] bg-clip-text text-transparent opacity-90">
                         404
                     </h1>
                     {/* Glowing Accent Badge */}
@@ -40,10 +40,10 @@ const NotFound = () => {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-semibold">
                         <Link href="/ideas" className="p-3 bg-base-100 hover:bg-[#082a5e]/5 border border-base-200 rounded-xl flex items-center gap-2 text-base-content/80 hover:text-[#082a5e] transition-all">
-                            ✨ Explore Other Ideas
+                            Explore Other Ideas
                         </Link>
                         <Link href="/add-idea" className="p-3 bg-base-100 hover:bg-[#082a5e]/5 border border-base-200 rounded-xl flex items-center gap-2 text-base-content/80 hover:text-[#082a5e] transition-all">
-                            💡 Post This as an Idea
+                            Post This as an Idea
                         </Link>
                     </div>
                 </div>

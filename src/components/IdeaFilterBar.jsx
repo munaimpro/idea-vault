@@ -21,8 +21,8 @@ const IdeaFilterBar = () => {
     };
 
     return (
-        <div className="w-full flex flex-col gap-4 items-center">
-            <div className="flex gap-4 w-full">
+        <div className="w-full flex flex-col gap-4 mt-12 items-center">
+            <div className="flex flex-col lg:flex-row gap-4 w-full">
                 {/* Search Input */}
                 <div className="w-full relative">
                     <input
